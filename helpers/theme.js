@@ -30,11 +30,19 @@ export const theme = createTheme({
     },
   },
   typography : {
+      h6 : {
+        fontFamily : 'Noto Sans HK',
+        fontWeight : '500',
+        fontStyle : 'normal',
+        fontSize : '20px',
+        color : '#103B66'
+      },
       bold1 : {
         fontFamily : 'Noto Sans HK',
         fontWeight : '400',
         fontSize : '14px',
         
       }
+
   }
 });

@@ -5,7 +5,22 @@ import { red } from '@mui/material/colors';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: '#556cd6',
+      main: '#21B8F9',
+    },
+    orange:{
+        main: '#FFA26B',
+    },
+    green:{
+        main : '#00C48C',
+    },
+    red:{
+        main : '#F33451',
+    },
+    white:{
+        main : '#FFFFFF'
+    },
+    blueTinte:{
+        main : '#E9F8FE'
     },
     secondary: {
       main: '#19857b',
@@ -14,4 +29,20 @@ export const theme = createTheme({
       main: red.A400,
     },
   },
+  typography : {
+      h6 : {
+        fontFamily : 'Noto Sans HK',
+        fontWeight : '500',
+        fontStyle : 'normal',
+        fontSize : '20px',
+        color : '#103B66'
+      },
+      bold1 : {
+        fontFamily : 'Noto Sans HK',
+        fontWeight : '400',
+        fontSize : '14px',
+        
+      }
+
+  }
 });

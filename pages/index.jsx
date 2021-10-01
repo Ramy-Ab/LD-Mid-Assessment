@@ -1,6 +1,7 @@
-import { Grid } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
+import Dashboard from "../components/dashboard/Dashboard";
 import LeftSideBar from "../components/LeftSideBar/LeftSideBar";
 import NavBar from "../components/NavBar";
 import styles from "../styles/Home.module.css";
@@ -13,7 +14,10 @@ export default function Home() {
           <LeftSideBar />
         </Grid>
         <Grid item md={9.8}>
-          <NavBar />
+          <Stack>
+            <NavBar />
+            <Dashboard />
+          </Stack>
         </Grid>
       </Grid>
     </>

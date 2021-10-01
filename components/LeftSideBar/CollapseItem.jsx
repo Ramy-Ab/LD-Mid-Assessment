@@ -14,7 +14,6 @@ import {
 } from "@mui/icons-material";
 
 export default function CollapseItem({ icon, text, children }) {
-  console.log("iteeeemm : ", text);
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 

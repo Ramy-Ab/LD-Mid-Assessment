@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <>
       <Grid container spacing={0}>
-        <Grid item md={2.2}>
+        <Grid item xs={1} md={2.2}>
           <LeftSideBar />
         </Grid>
-        <Grid item md={9.8}>
+        <Grid item xs={11} md={9.8}>
           <Stack>
             <NavBar />
             <Dashboard />

@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     height: "100vh",
     borderRight: "1px solid rgba(0, 0, 0, 0.12)",
+    overflow: "hidden auto",
   },
   drawerHeader: {
     display: "flex",

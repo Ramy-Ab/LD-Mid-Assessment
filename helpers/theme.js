@@ -70,6 +70,20 @@ export const theme = createTheme({
       lineHeight: "18px",
       color: "#666666",
     },
+    cardOrderInfo: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "400",
+      fontSize: "17px",
+      lineHeight: "22px",
+      color: "#6C7C8C",
+    },
+    cardOrderPrice: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "500",
+      fontSize: "17px",
+      lineHeight: "22px",
+      color: "#103B66",
+    },
     bluetext1: {
       color: "#21B8F9",
       fontFamily: "SourceSansPro",

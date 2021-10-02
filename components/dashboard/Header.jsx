@@ -7,12 +7,12 @@ export default function Header() {
   return (
     <Grid className={classes.container} container>
       <Grid item xs={12} md={4}>
-        <Typography variant="h4">Welcome Marino!</Typography>
+        <Typography variant="dashboardHeader">Welcome Marino!</Typography>
       </Grid>
 
       <Grid item xs={12} md={6}>
         <span>
-          <Typography variant="h6" className={classes.rightItem}>
+          <Typography variant="dashboardUrl" className={classes.rightItem}>
             app.vetrinalive.it/french-store
             <ExternalLink className={classes.icon} />
           </Typography>

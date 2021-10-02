@@ -17,6 +17,9 @@ export default function RightFrame() {
           <Trustpilot />
         </Grid>
         <Grid item className={classes.shop} xs={12} md={12}>
+          <InviteFreinds />
+        </Grid>
+        <Grid item className={classes.shop} xs={12} md={12}>
           <SupportClient />
         </Grid>
       </Grid>

@@ -9,11 +9,11 @@ export default function Dashboard() {
   return (
     <div>
       <Header />
-      <Grid container spacing={3} className={classes.container}>
+      <Grid container className={classes.container}>
         <Grid item xs={12} md={8}>
           <LeftFrame />
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item xs={12} md={3}>
           <RightFrame />
         </Grid>
       </Grid>
@@ -25,5 +25,8 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     alignItems: "flex-start",
+    margin: "1rem",
+    marginTop: "-50px",
+    zIndex: "2",
   },
 }));

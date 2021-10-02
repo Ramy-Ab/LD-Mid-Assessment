@@ -1,12 +1,12 @@
 import { Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-export default function VisitorCard() {
+export default function Scroller() {
   const classes = useStyles();
   return (
     <>
-      <Paper className={classes.paper} elevation={3}>
-        visitor
+      <Paper className={classes.paper} elevation={5}>
+        scroller
       </Paper>
     </>
   );
@@ -14,6 +14,6 @@ export default function VisitorCard() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    height: "226px",
+    height: "400px",
   },
 }));

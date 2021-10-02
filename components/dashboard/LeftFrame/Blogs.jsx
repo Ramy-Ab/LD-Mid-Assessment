@@ -1,17 +1,15 @@
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Blogs from "./Blogs";
-import ScrollContainer from "./ScrollContainer";
-import TopCards from "./TopCards";
+import BlogList from "./BlogList";
+import BlogHeader from "./BlogHeader";
 
-export default function LeftFrame() {
+export default function Blogs() {
   const classes = useStyles();
   return (
     <>
-      <Grid className={classes.container} container xs={12}>
-        <TopCards />
-        <ScrollContainer />
-        <Blogs />
+      <Grid container className={classes.container} xs={12}>
+        <BlogHeader />
+        <BlogList />
       </Grid>
     </>
   );
@@ -23,5 +21,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "flex-start",
     padding: "1rem",
+    backgroundColor: "#E9F8FE",
   },
 }));

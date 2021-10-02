@@ -1,17 +1,15 @@
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Blogs from "./Blogs";
-import ScrollContainer from "./ScrollContainer";
-import TopCards from "./TopCards";
+import BlogItem from "./BlogItem";
 
-export default function LeftFrame() {
+export default function BlogList() {
   const classes = useStyles();
   return (
     <>
       <Grid className={classes.container} container xs={12}>
-        <TopCards />
-        <ScrollContainer />
-        <Blogs />
+        {["0", "1", "2", "0", "1", "2"].map((x) => (
+          <BlogItem x={x} />
+        ))}
       </Grid>
     </>
   );
@@ -20,8 +18,6 @@ export default function LeftFrame() {
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-start",
-    padding: "1rem",
+    justifyContent: "space-between",
   },
 }));

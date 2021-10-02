@@ -15,5 +15,6 @@ export default function OrdersCard() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     height: "226px",
+    boxShadow: "0px 2px 8px rgb(0 0 0 / 10%)",
   },
 }));

@@ -22,8 +22,10 @@ export default function TopCards() {
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
     alignItems: "flex-start",
     zIndex: 2,
+    marginBottom: "24px",
+    overflow: "hidden auto",
   },
 }));

@@ -24,7 +24,7 @@ export default function ScrollContainer() {
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     flexDirection: "row",
     marginBottom: "24px",

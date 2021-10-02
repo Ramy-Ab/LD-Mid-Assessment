@@ -13,7 +13,7 @@ export default function Dashboard() {
         <Grid item xs={12} md={8}>
           <LeftFrame />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={4}>
           <RightFrame />
         </Grid>
       </Grid>
@@ -23,6 +23,7 @@ export default function Dashboard() {
 
 const useStyles = makeStyles((theme) => ({
   container: {
+    marginLeft: "0",
     display: "flex",
     alignItems: "flex-start",
     margin: "1rem",

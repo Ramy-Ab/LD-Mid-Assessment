@@ -1,12 +1,12 @@
 import { Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-export default function OrdersCard() {
+export default function SupportClient() {
   const classes = useStyles();
   return (
     <>
       <Paper className={classes.paper} elevation={3}>
-        orders
+        Support client
       </Paper>
     </>
   );
@@ -14,7 +14,9 @@ export default function OrdersCard() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    height: "226px",
+    height: "250px",
     borderRadius: "10px",
+    borderRadius: "10px",
+    marginBottom: "24px",
   },
 }));

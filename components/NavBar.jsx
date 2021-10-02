@@ -35,6 +35,7 @@ export default function NavBar() {
 
 const useStyle = makeStyles((theme) => ({
   appBar: {
+    position: "stickyd",
     minHeight: "64px",
     height: "3rem",
     display: "flex",

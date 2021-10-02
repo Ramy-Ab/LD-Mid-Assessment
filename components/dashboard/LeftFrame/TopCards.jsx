@@ -22,7 +22,7 @@ export default function TopCards() {
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "flex-start",
     zIndex: 2,
     marginBottom: "24px",

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-around",
-    alignItems: "center",
+    alignItems: "flex-start",
     flexDirection: "row",
     marginBottom: "24px",
     height: "400px",

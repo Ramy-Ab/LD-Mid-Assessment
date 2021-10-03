@@ -18,8 +18,9 @@ export default function Trustpilot() {
             </Grid>
           </Grid>
           <Typography className={classes.textBody}>
-            Show us your love by leaving a positive review on trust pilot and
-            receive the extension of 50 additional products
+            Show us your love by leaving a
+            <span style={{ color: "#00C48C" }}> positive </span> review on trust
+            pilot and receive the extension of 50 additional products
           </Typography>
           <Grid container>
             <Typography

@@ -14,7 +14,7 @@ export default function InviteFreinds() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    height: "226px",
+    height: "250px",
     borderRadius: "10px",
     marginBottom: "24px",
   },

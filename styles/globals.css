@@ -7,3 +7,8 @@
   font-family: "SourceSansPro";
   src: url("../assets/fonts/SourceSansPro-Regular.ttf");
 }
+
+@font-face {
+  font-family: "SourceSansKR";
+  src: url("../assets/fonts/NotoSansKR-Regular.otf");
+}

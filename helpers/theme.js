@@ -91,7 +91,26 @@ export const theme = createTheme({
       fontSize: "15px",
       lineHeight: "20px",
     },
-    
-
+    blogTitle: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "500",
+      fontSize: "11px",
+      lineHeight: "13px",
+      color: "#21B8F9",
+    },
+    blogBody: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "500",
+      fontSize: "15px",
+      lineHeight: "20px",
+      color: "#103B66",
+    },
+    blogFooter: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "300",
+      fontSize: "12px",
+      lineHeight: "12px",
+      color: "#103B66",
+    },
   },
 });

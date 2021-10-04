@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     flexDirection: "row",
     marginBottom: "24px",
-    height: "400px",
+    minHeight: "343px",
     alignContent: "stretch",
   },
 }));

@@ -5,7 +5,7 @@ import { ArrowRight, Eye } from "react-feather";
 import DateMenu from "./Menu";
 import Menu from "./Menu";
 
-export default function OrdersCard() {
+export default function OrdersCard({ orders }) {
   const classes = useStyles();
   return (
     <>
@@ -30,7 +30,9 @@ export default function OrdersCard() {
                 </Typography>
               </Grid>
               <Grid className={classes.leftGreed} item xs={4}>
-                <Typography variant="cardOrderPrice">156</Typography>
+                <Typography variant="cardOrderPrice">
+                  {orders.month.count}
+                </Typography>
               </Grid>
             </Grid>
             <Grid className={classes.cardHeader} container xs={12}>
@@ -38,7 +40,9 @@ export default function OrdersCard() {
                 <Typography variant="cardOrderInfo">Earnings:</Typography>
               </Grid>
               <Grid className={classes.leftGreed} item xs={4}>
-                <Typography variant="cardOrderPrice">$1893,23</Typography>
+                <Typography variant="cardOrderPrice">
+                  {orders.month.price}
+                </Typography>
               </Grid>
             </Grid>
           </Stack>

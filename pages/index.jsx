@@ -2,11 +2,15 @@ import { Grid, Stack } from "@mui/material";
 import Dashboard from "../components/dashboard/Dashboard";
 import LeftSideBar from "../components/LeftSideBar/LeftSideBar";
 import NavBar from "../components/NavBar";
-import useSWR from "swr";
+import useSwr from "swr";
 import { getBlogPosts } from "../helpers/api/getBlogPosts";
 import { getExtensions } from "../helpers/api/getExtensions";
+import { getPersonalInfo } from "../helpers/api/getPersonalInfo";
 
 export default function Home({ blogs, extensions }) {
+  const url = "/admin/me";
+  const { data } = useSwr(url, getPersonalInfo);
+  console.log("meee : ", data);
   return (
     <>
       <Grid container spacing={0}>
@@ -15,8 +19,14 @@ export default function Home({ blogs, extensions }) {
         </Grid>
         <Grid item xs={11} md={9.8}>
           <Stack>
-            <NavBar />
-            <Dashboard blogs={blogs} extensions={extensions} />
+            {data && <NavBar unseen_news={data.unseen_news} />}
+            {data && (
+              <Dashboard
+                blogs={blogs}
+                extensions={extensions}
+                fullName={data.fullname}
+              />
+            )}
           </Stack>
         </Grid>
       </Grid>

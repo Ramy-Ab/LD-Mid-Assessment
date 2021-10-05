@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import { ArrowRight, Users } from "react-feather";
 import ScrollerItems from "./ScrollerItems";
 
-export default function Scroller() {
+export default function Scroller({ extensions }) {
   const classes = useStyles();
   return (
     <>
@@ -18,7 +18,7 @@ export default function Scroller() {
               </Typography>
             </Grid>
           </Grid>
-          <ScrollerItems xs={6} />
+          <ScrollerItems extensions={extensions} xs={6} />
           <Grid container>
             <Typography
               sx={{ textDecoration: "underline" }}

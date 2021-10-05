@@ -4,14 +4,14 @@ import Blogs from "./Blogs";
 import ScrollContainer from "./ScrollContainer";
 import TopCards from "./TopCards";
 
-export default function LeftFrame() {
+export default function LeftFrame({ blogs, extensions }) {
   const classes = useStyles();
   return (
     <>
       <Grid className={classes.container} container xs={12}>
         <TopCards />
-        <ScrollContainer />
-        <Blogs />
+        <ScrollContainer extensions={extensions} />
+        <Blogs blogs={blogs} />
       </Grid>
     </>
   );

@@ -1,12 +1,12 @@
 import { Grid, Stack } from "@mui/material";
-import Head from "next/head";
-import Image from "next/image";
 import Dashboard from "../components/dashboard/Dashboard";
 import LeftSideBar from "../components/LeftSideBar/LeftSideBar";
 import NavBar from "../components/NavBar";
-import styles from "../styles/Home.module.css";
+import useSWR from "swr";
+import { getBlogPosts } from "../helpers/api/getBlogPosts";
+import { getExtensions } from "../helpers/api/getExtensions";
 
-export default function Home() {
+export default function Home({ blogs, extensions }) {
   return (
     <>
       <Grid container spacing={0}>
@@ -16,10 +16,21 @@ export default function Home() {
         <Grid item xs={11} md={9.8}>
           <Stack>
             <NavBar />
-            <Dashboard />
+            <Dashboard blogs={blogs} extensions={extensions} />
           </Stack>
         </Grid>
       </Grid>
     </>
   );
 }
+
+export const getStaticProps = async () => {
+  const blogs = await getBlogPosts();
+  const extensions = await getExtensions();
+  return {
+    props: {
+      blogs,
+      extensions,
+    },
+  };
+};

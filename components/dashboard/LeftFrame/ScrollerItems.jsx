@@ -3,9 +3,9 @@ import ScrollerItem from "./Scrollertem";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { extensionsListe } from "../../../utils/ExtensionScrolliste";
 
-export default function ScrollerItems() {
+export default function ScrollerItems({ extensions }) {
+  console.log("news : ", extensions.new);
   const classes = useStyles();
   const settings = {
     dots: false,
@@ -20,11 +20,11 @@ export default function ScrollerItems() {
   return (
     <>
       <Slider {...settings}>
-        {extensionsListe.map((item, idx) => (
+        {extensions.new.map((item, idx) => (
           <ScrollerItem
-            idx={idx}
-            img={item.img}
-            desc={item.desc}
+            key={idx}
+            img={item.logo_url}
+            desc={item.code}
             style={{ width: "170px" }}
           />
         ))}

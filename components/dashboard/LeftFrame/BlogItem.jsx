@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 
 export default function BlogItem({
-  key,
   image_url,
   category,
   title,

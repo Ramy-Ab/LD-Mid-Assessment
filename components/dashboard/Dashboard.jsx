@@ -4,14 +4,14 @@ import Header from "./Header";
 import LeftFrame from "./LeftFrame/LeftFrame";
 import RightFrame from "./RightFrame/RightFrame";
 
-export default function Dashboard() {
+export default function Dashboard({ blogs, extensions }) {
   const classes = useStyles();
   return (
     <div>
       <Header />
       <Grid container className={classes.container}>
         <Grid item xs={12} md={8}>
-          <LeftFrame />
+          <LeftFrame blogs={blogs} extensions={extensions} />
         </Grid>
         <Grid item xs={12} md={4}>
           <RightFrame />

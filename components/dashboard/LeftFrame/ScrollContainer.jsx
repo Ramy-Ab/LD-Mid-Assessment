@@ -3,7 +3,7 @@ import { makeStyles } from "@mui/styles";
 import MobileApp from "./MobileApp";
 import Scroller from "./Scroller";
 
-export default function ScrollContainer() {
+export default function ScrollContainer({ extensions }) {
   const classes = useStyles();
 
   return (
@@ -14,7 +14,7 @@ export default function ScrollContainer() {
           <MobileApp />
         </Grid>
         <Grid className={classes.item} item xs={12} md={5.5}>
-          <Scroller />
+          <Scroller extensions={extensions} />
         </Grid>
       </Grid>
     </>

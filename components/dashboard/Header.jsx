@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
       "linear-gradient(rgb(33, 184, 249) 0%, rgb(205, 255, 255) 132.05%)",
     minHeight: "182px",
     padding: "2rem",
+    marginTop: "64px",
   },
   rightItem: {
     // paddingRight: "25%",

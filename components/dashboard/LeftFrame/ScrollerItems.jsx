@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function ScrollerItems({ extensions }) {
-  console.log("news : ", extensions.new);
   const classes = useStyles();
   const settings = {
     dots: false,

@@ -4,11 +4,11 @@ import Header from "./Header";
 import LeftFrame from "./LeftFrame/LeftFrame";
 import RightFrame from "./RightFrame/RightFrame";
 
-export default function Dashboard({ blogs, extensions }) {
+export default function Dashboard({ blogs, extensions, fullName }) {
   const classes = useStyles();
   return (
     <div>
-      <Header />
+      <Header fullName={fullName} />
       <Grid container className={classes.container}>
         <Grid item xs={12} md={8}>
           <LeftFrame blogs={blogs} extensions={extensions} />

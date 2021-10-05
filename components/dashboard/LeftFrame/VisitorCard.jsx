@@ -4,7 +4,7 @@ import { ArrowRight, Eye } from "react-feather";
 import DateMenu from "./Menu";
 import Menu from "./Menu";
 
-export default function VisitorCard() {
+export default function VisitorCard({ visitor }) {
   const classes = useStyles();
   return (
     <>
@@ -20,7 +20,7 @@ export default function VisitorCard() {
               <DateMenu />
             </Grid>
           </Grid>
-          <Typography className={classes.number}>1842</Typography>
+          <Typography className={classes.number}>{visitor.month}</Typography>
           <Grid container>
             <Typography
               sx={{ textDecoration: "underline" }}

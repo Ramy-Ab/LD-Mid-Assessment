@@ -2,12 +2,12 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ExternalLink, Share } from "react-feather";
 
-export default function Header() {
+export default function Header({ fullName }) {
   const classes = useStyles();
   return (
     <Grid className={classes.container} container>
       <Grid item xs={12} md={4}>
-        <Typography variant="dashboardHeader">Welcome Marino!</Typography>
+        <Typography variant="dashboardHeader">Welcome {fullName}!</Typography>
       </Grid>
 
       <Grid item xs={12} md={6}>

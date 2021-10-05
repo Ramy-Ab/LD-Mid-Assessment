@@ -3,13 +3,11 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@mui/styles";
 import { Zap } from "react-feather";
 import { Badge } from "@mui/material";
 
-export default function NavBar() {
+export default function NavBar({ unseen_news }) {
   const classes = useStyle();
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,7 +19,7 @@ export default function NavBar() {
           <Button color="inherit">
             {" "}
             <Zap />
-            <Badge classN badgeContent={2} color="error">
+            <Badge classN badgeContent={unseen_news + 1} color="error">
               <Typography variant="bold1" component="div" sx={{ flexGrow: 1 }}>
                 What's new
               </Typography>

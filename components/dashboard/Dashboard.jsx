@@ -7,9 +7,9 @@ import RightFrame from "./RightFrame/RightFrame";
 export default function Dashboard({ blogs, extensions, fullName }) {
   const classes = useStyles();
   return (
-    <div>
+    <>
       <Header fullName={fullName} />
-      <Grid container className={classes.container}>
+      <Grid container className={classes.secContainer}>
         <Grid item xs={12} md={8}>
           <LeftFrame blogs={blogs} extensions={extensions} />
         </Grid>
@@ -17,12 +17,15 @@ export default function Dashboard({ blogs, extensions, fullName }) {
           <RightFrame />
         </Grid>
       </Grid>
-    </div>
+    </>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  container: {
+  // container: {
+  //   marginLeft: "auto",
+  // },
+  secContainer: {
     marginLeft: "0",
     display: "flex",
     alignItems: "flex-start",

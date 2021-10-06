@@ -30,7 +30,6 @@ export default function DrawerList() {
           )}
           {item.type === "collapse" && (
             <CollapseItem
-              className={classes.item}
               icon={item.icon}
               text={item.text}
               children={item.children}
@@ -43,12 +42,7 @@ export default function DrawerList() {
 
       {listeItems2.map((item, idx) => (
         <>
-          <ListItemButton className={classes.item} key={idx}>
-            <ListItemIcon className={classes.icon}>{item.icon}</ListItemIcon>
-            <ListItemText
-              primary={<typography variant="bold1"> {item.text} </typography>}
-            />
-          </ListItemButton>
+          <SubItem key={idx} icon={item.icon} text={item.text} />
         </>
       ))}
     </List>

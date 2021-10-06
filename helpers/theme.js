@@ -36,11 +36,19 @@ export const theme = createTheme({
       fontSize: "20px",
       color: "#103B66",
     },
-    bold1: {
-      fontFamily: ["Noto Sans HK", "Sans-Serif"],
+    bold2: {
+      fontFamily: "SourceSansPro",
       fontWeight: "400",
-      fontSize: "1rem",
-      lineHeight: "1.5",
+      fontSize: "15px",
+      lineHeight: "20px",
+      color: "#103B66",
+    },
+    bold1: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "400",
+      fontSize: "14px",
+      lineHeight: "16px",
+      color: "#233B53",
     },
     dashboardHeader: {
       fontFamily: "SourceSansPro",

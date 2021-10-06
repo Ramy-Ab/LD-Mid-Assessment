@@ -15,7 +15,11 @@ export default function NavBar({ unseen_news }) {
         <Toolbar>
           <Grid container xs={11} className={classes.container}>
             <Grid item xs={2}>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              <Typography
+                variant="cardOrderPrice"
+                component="div"
+                sx={{ flexGrow: 1 }}
+              >
                 Dashboard
               </Typography>
             </Grid>
@@ -24,7 +28,7 @@ export default function NavBar({ unseen_news }) {
                 {" "}
                 <Zap />
                 <Badge classN badgeContent={unseen_news + 1} color="error">
-                  <Typography variant="bold1" component="div">
+                  <Typography variant="bold2" component="div">
                     What's new
                   </Typography>
                 </Badge>

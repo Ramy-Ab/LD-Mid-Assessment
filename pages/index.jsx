@@ -6,18 +6,19 @@ import useSwr from "swr";
 import { getBlogPosts } from "../helpers/api/getBlogPosts";
 import { getExtensions } from "../helpers/api/getExtensions";
 import { getPersonalInfo } from "../helpers/api/getPersonalInfo";
+import { makeStyles } from "@mui/styles";
 
 export default function Home({ blogs, extensions }) {
   const url = "/admin/me";
   const { data } = useSwr(url, getPersonalInfo);
-  console.log("meee : ", data);
+  const classes = useStyles();
   return (
     <>
       <Grid container spacing={0}>
-        <Grid item xs={1} md={2.2}>
+        <Grid className={classes.sideBar} item xs={1} sm={2} md={2.2}>
           <LeftSideBar />
         </Grid>
-        <Grid item xs={11} md={9.8}>
+        <Grid className={classes.main} item xs={11} sm={10} md={9.8}>
           <Stack>
             {data && <NavBar unseen_news={data.unseen_news} />}
             {data && (
@@ -33,6 +34,15 @@ export default function Home({ blogs, extensions }) {
     </>
   );
 }
+
+const useStyles = makeStyles((theme) => ({
+  sideBar: {
+    position: "fixed",
+  },
+  main: {
+    marginLeft: "auto",
+  },
+}));
 
 export const getStaticProps = async () => {
   const blogs = await getBlogPosts();

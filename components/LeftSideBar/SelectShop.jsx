@@ -36,5 +36,8 @@ export default function SelectShop() {
 const useStyle = makeStyles((theme) => ({
   container: {
     marginTop: "20px",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));

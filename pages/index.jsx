@@ -14,12 +14,19 @@ export default function Home({ blogs, extensions }) {
 }
 
 export const getStaticProps = async () => {
-  const blogs = await getBlogPosts();
-  const extensions = await getExtensions();
+  const { blogs, errorBlogs } = await getBlogPosts();
+  const { extensions, errorExtensions } = await getExtensions();
+  if (errorBlogs || !blogs) {
+    return { notFound: true };
+  }
+  if (errorExtensions || !extensions) {
+    return { notFound: true };
+  }
   return {
     props: {
       blogs,
       extensions,
     },
+    revalidate: 3600,
   };
 };

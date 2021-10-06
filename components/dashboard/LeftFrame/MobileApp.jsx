@@ -66,7 +66,7 @@ export default function MobileApp() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    minHeight: "348px",
+    minHeight: "343px",
     backgroundColor: "#F3A35C",
     padding: "24px",
     borderRadius: "10px",

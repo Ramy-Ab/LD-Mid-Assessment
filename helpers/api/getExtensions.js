@@ -1,6 +1,7 @@
 import { vetrina } from "../axiosInstances";
 
 export const getExtensions = async () => {
+  var error;
   const config = {
     headers: {
       "Content-type": "application/json",
@@ -8,12 +9,12 @@ export const getExtensions = async () => {
     },
   };
   try {
-    const { data } = await vetrina.get(
+    var { data } = await vetrina.get(
       "/admin/store-features?shop_id=3105",
       config
     );
-    return data;
   } catch (e) {
-    console.log(e);
+    error = e.response.data;
   }
+  return { extensions: data, errorExtensions: error };
 };

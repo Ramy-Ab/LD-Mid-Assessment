@@ -1,10 +1,12 @@
 import { vetrina } from "../axiosInstances";
 
 export const getBlogPosts = async () => {
+  var error;
+
   try {
-    const { data } = await vetrina.get("/blog-posts");
-    return data;
+    var { data } = await vetrina.get("/blog-posts");
   } catch (e) {
-    console.log(e);
+    error = e.response.data;
   }
+  return { blogs: data, errorBlogs: error };
 };

@@ -3,17 +3,19 @@ import { makeStyles } from "@mui/styles";
 import { ExternalLink } from "react-feather";
 import useSwr from "swr";
 import { getPersonalInfo } from "../../helpers/api/getPersonalInfo";
-export default function Header({ fullName }) {
+export default function Header() {
   const url = "/admin/me";
   const { data } = useSwr(url, getPersonalInfo);
+  const personelleInfo = data?.data;
+  const error = data?.error;
   const classes = useStyles();
   return (
     <>
-      {data && (
+      {personelleInfo && !error && (
         <Grid className={classes.container} container>
           <Grid item xs={12} md={4}>
             <Typography variant="dashboardHeader">
-              Welcome {data.fullname}!
+              Welcome {personelleInfo.fullname}!
             </Typography>
           </Grid>
 

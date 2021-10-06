@@ -22,17 +22,18 @@ export default function CollapseItem({ icon, text, children }) {
   };
   return (
     <>
-      <ListItemButton className={classes.item} onClick={handleClick}>
-        <ListItemIcon>{icon}</ListItemIcon>
+      <ListItemButton className={classes.listeItem} onClick={handleClick}>
+        <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
         <ListItemText
+          className={classes.text}
           primary={<Typography variant="bold1"> {text} </Typography>}
         />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
+        <List className={classes.collapseItem} component="div" disablePadding>
           {children.map((subItem) => (
-            <ListItemButton sx={{ pl: 4 }}>
+            <ListItemButton className={classes.item} sx={{ pl: 4 }}>
               <ListItemText
                 primary={<Typography variant="bold1"> {subItem} </Typography>}
               />
@@ -45,7 +46,23 @@ export default function CollapseItem({ icon, text, children }) {
 }
 
 const useStyles = makeStyles((theme) => ({
-  item: {
+  listeItem: {
     padding: "0",
+  },
+  icon: {
+    minWidth: "35px",
+    color: "#103B66",
+  },
+  item: {
+    paddingTop: "0 !important",
+    paddingButtom: "0 !important",
+  },
+  collapseItem: {
+    backgroundColor: "#E9F8FE",
+  },
+  text: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));

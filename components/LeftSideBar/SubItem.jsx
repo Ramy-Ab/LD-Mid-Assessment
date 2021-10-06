@@ -11,9 +11,12 @@ export default function SubItem({ icon, text }) {
   return (
     <>
       <ListItemButton className={classes.item}>
-        <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
+        <ListItemIcon className={classes.icon} className={classes.icon}>
+          {icon}
+        </ListItemIcon>
 
         <ListItemText
+          className={classes.text}
           primary={<Typography variant="bold1"> {text} </Typography>}
         />
       </ListItemButton>
@@ -23,5 +26,14 @@ export default function SubItem({ icon, text }) {
 const useStyles = makeStyles((theme) => ({
   item: {
     padding: "0 !important",
+  },
+  icon: {
+    minWidth: "35px",
+    color: "#103B66",
+  },
+  text: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
 }));

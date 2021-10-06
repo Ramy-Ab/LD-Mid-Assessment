@@ -5,7 +5,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import { Zap } from "react-feather";
-import { Badge } from "@mui/material";
+import { Badge, Grid } from "@mui/material";
 
 export default function NavBar({ unseen_news }) {
   const classes = useStyle();
@@ -13,18 +13,28 @@ export default function NavBar({ unseen_news }) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className={classes.appBar} color="white">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Dashboard
-          </Typography>
-          <Button color="inherit">
-            {" "}
-            <Zap />
-            <Badge classN badgeContent={unseen_news + 1} color="error">
-              <Typography variant="bold1" component="div" sx={{ flexGrow: 1 }}>
-                What's new
+          <Grid container xs={11} className={classes.container}>
+            <Grid item xs={2}>
+              <Typography
+                variant="cardOrderPrice"
+                component="div"
+                sx={{ flexGrow: 1 }}
+              >
+                Dashboard
               </Typography>
-            </Badge>
-          </Button>
+            </Grid>
+            <Grid container className={classes.item} xs={3}>
+              <Button color="inherit">
+                {" "}
+                <Zap />
+                <Badge classN badgeContent={unseen_news + 1} color="error">
+                  <Typography variant="bold2" component="div">
+                    What's new
+                  </Typography>
+                </Badge>
+              </Button>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </Box>
@@ -33,7 +43,6 @@ export default function NavBar({ unseen_news }) {
 
 const useStyle = makeStyles((theme) => ({
   appBar: {
-    position: "stickyd",
     minHeight: "64px",
     height: "3rem",
     display: "flex",
@@ -41,5 +50,15 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
     boxShadow: "none",
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+    position: "fixed",
+    zIndex: "1000",
+  },
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  item: {
+    display: "flex",
+    justifyContent: "flex-start",
   },
 }));

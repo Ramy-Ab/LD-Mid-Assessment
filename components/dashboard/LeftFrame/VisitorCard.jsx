@@ -1,10 +1,11 @@
 import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight, Eye } from "react-feather";
+import Spinner from "../../Spinner";
 import DateMenu from "./Menu";
 import Menu from "./Menu";
 
-export default function VisitorCard({ visitor }) {
+export default function VisitorCard({ visitor, shopInfo, error }) {
   const classes = useStyles();
   return (
     <>
@@ -20,7 +21,10 @@ export default function VisitorCard({ visitor }) {
               <DateMenu />
             </Grid>
           </Grid>
-          <Typography className={classes.number}>{visitor.month}</Typography>
+          {!visitor && !error && <Spinner />}
+          {visitor && !error && (
+            <Typography className={classes.number}>{visitor.month}</Typography>
+          )}
           <Grid container>
             <Typography
               sx={{ textDecoration: "underline" }}

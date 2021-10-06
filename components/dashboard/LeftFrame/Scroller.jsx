@@ -8,7 +8,7 @@ export default function Scroller({ extensions }) {
   return (
     <>
       <Paper className={classes.paper} elevation={5}>
-        <Stack spacing={3} className={classes.card}>
+        <Stack spacing={5} className={classes.card}>
           <Grid className={classes.cardHeader} container xs={12}>
             <Grid item xs={12}>
               <Users className={classes.usersIcon} size={24} />
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     borderRadius: "10px",
     padding: "24px",
-    height: "343px",
+    minHeight: "343px",
   },
   cardHeader: {
     display: "flex",

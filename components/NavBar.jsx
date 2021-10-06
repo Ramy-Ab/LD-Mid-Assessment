@@ -12,6 +12,8 @@ import { getPersonalInfo } from "../helpers/api/getPersonalInfo";
 export default function NavBar() {
   const url = "/admin/me";
   const { data } = useSwr(url, getPersonalInfo);
+  const personelleInfo = data?.data;
+  const error = data?.error;
   const classes = useStyle();
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -31,8 +33,11 @@ export default function NavBar() {
               <Button color="inherit">
                 {" "}
                 <Zap />
-                {data && (
-                  <Badge badgeContent={data.unseen_news + 1} color="error">
+                {personelleInfo && !error && (
+                  <Badge
+                    badgeContent={personelleInfo.unseen_news + 1}
+                    color="error"
+                  >
                     <Typography variant="bold2" component="div">
                       What's new
                     </Typography>

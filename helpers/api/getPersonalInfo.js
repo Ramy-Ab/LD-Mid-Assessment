@@ -1,7 +1,7 @@
 import { vetrina } from "../axiosInstances";
 
 export const getPersonalInfo = async (url) => {
-  console.log("data : ");
+  var error;
   const config = {
     headers: {
       "Content-type": "application/json",
@@ -9,10 +9,9 @@ export const getPersonalInfo = async (url) => {
     },
   };
   try {
-    const { data } = await vetrina.get(url, config);
-
-    return data;
+    var { data } = await vetrina.get(url, config);
   } catch (e) {
-    console.log(e);
+    error = e.response.data;
   }
+  return { data, error };
 };

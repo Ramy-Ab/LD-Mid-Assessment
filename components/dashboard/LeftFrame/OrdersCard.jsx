@@ -2,10 +2,11 @@ import { FormatListBulleted } from "@mui/icons-material";
 import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight, Eye } from "react-feather";
+import Spinner from "../../Spinner";
 import DateMenu from "./Menu";
 import Menu from "./Menu";
 
-export default function OrdersCard({ orders }) {
+export default function OrdersCard({ orders, error }) {
   const classes = useStyles();
   return (
     <>
@@ -30,9 +31,12 @@ export default function OrdersCard({ orders }) {
                 </Typography>
               </Grid>
               <Grid className={classes.leftGreed} item xs={4}>
-                <Typography variant="cardOrderPrice">
-                  {orders.month.count}
-                </Typography>
+                {!orders && !error && <Spinner />}
+                {orders && !error && (
+                  <Typography variant="cardOrderPrice">
+                    {orders.month.count}
+                  </Typography>
+                )}
               </Grid>
             </Grid>
             <Grid className={classes.cardHeader} container xs={12}>
@@ -40,9 +44,12 @@ export default function OrdersCard({ orders }) {
                 <Typography variant="cardOrderInfo">Earnings:</Typography>
               </Grid>
               <Grid className={classes.leftGreed} item xs={4}>
-                <Typography variant="cardOrderPrice">
-                  {orders.month.price}
-                </Typography>
+                {!orders && !error && <Spinner />}
+                {orders && !error && (
+                  <Typography variant="cardOrderPrice">
+                    {orders.month.price}
+                  </Typography>
+                )}
               </Grid>
             </Grid>
           </Stack>

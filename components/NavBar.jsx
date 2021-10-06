@@ -6,15 +6,19 @@ import Button from "@mui/material/Button";
 import { makeStyles } from "@mui/styles";
 import { Zap } from "react-feather";
 import { Badge, Grid } from "@mui/material";
+import useSwr from "swr";
+import { getPersonalInfo } from "../helpers/api/getPersonalInfo";
 
-export default function NavBar({ unseen_news }) {
+export default function NavBar() {
+  const url = "/admin/me";
+  const { data } = useSwr(url, getPersonalInfo);
   const classes = useStyle();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className={classes.appBar} color="white">
         <Toolbar>
-          <Grid container xs={11} className={classes.container}>
-            <Grid item xs={2}>
+          <Grid container className={classes.container}>
+            <Grid item xs={2} className={classes.center}>
               <Typography
                 variant="cardOrderPrice"
                 component="div"
@@ -23,15 +27,17 @@ export default function NavBar({ unseen_news }) {
                 Dashboard
               </Typography>
             </Grid>
-            <Grid container className={classes.item} xs={3}>
+            <Grid item className={classes.item} xs={3}>
               <Button color="inherit">
                 {" "}
                 <Zap />
-                <Badge classN badgeContent={unseen_news + 1} color="error">
-                  <Typography variant="bold2" component="div">
-                    What's new
-                  </Typography>
-                </Badge>
+                {data && (
+                  <Badge badgeContent={data.unseen_news + 1} color="error">
+                    <Typography variant="bold2" component="div">
+                      What's new
+                    </Typography>
+                  </Badge>
+                )}
               </Button>
             </Grid>
           </Grid>
@@ -53,6 +59,11 @@ const useStyle = makeStyles((theme) => ({
     position: "fixed",
     zIndex: "1000",
   },
+  center: {
+    display: "flex",
+    alignItems: "center",
+  },
+
   container: {
     display: "flex",
     justifyContent: "space-between",
@@ -60,5 +71,9 @@ const useStyle = makeStyles((theme) => ({
   item: {
     display: "flex",
     justifyContent: "flex-start",
+    marginRight: "1rem",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
 }));

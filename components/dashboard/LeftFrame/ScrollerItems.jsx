@@ -22,6 +22,7 @@ export default function ScrollerItems({ extensions }) {
         {extensions.new.map((item, idx) => (
           <ScrollerItem
             key={idx}
+            id={item.id}
             img={item.logo_url}
             desc={item.code}
             style={{ width: "170px" }}

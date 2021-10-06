@@ -30,6 +30,7 @@ export default function DrawerList() {
           )}
           {item.type === "collapse" && (
             <CollapseItem
+              key={idx}
               icon={item.icon}
               text={item.text}
               children={item.children}

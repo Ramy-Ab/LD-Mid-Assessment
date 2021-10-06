@@ -1,24 +1,33 @@
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { ExternalLink, Share } from "react-feather";
-
+import { ExternalLink } from "react-feather";
+import useSwr from "swr";
+import { getPersonalInfo } from "../../helpers/api/getPersonalInfo";
 export default function Header({ fullName }) {
+  const url = "/admin/me";
+  const { data } = useSwr(url, getPersonalInfo);
   const classes = useStyles();
   return (
-    <Grid className={classes.container} container>
-      <Grid item xs={12} md={4}>
-        <Typography variant="dashboardHeader">Welcome {fullName}!</Typography>
-      </Grid>
+    <>
+      {data && (
+        <Grid className={classes.container} container>
+          <Grid item xs={12} md={4}>
+            <Typography variant="dashboardHeader">
+              Welcome {data.fullname}!
+            </Typography>
+          </Grid>
 
-      <Grid item xs={12} md={6}>
-        <span>
-          <Typography variant="dashboardUrl" className={classes.rightItem}>
-            app.vetrinalive.it/french-store
-            <ExternalLink className={classes.icon} />
-          </Typography>
-        </span>
-      </Grid>
-    </Grid>
+          <Grid item xs={12} md={6}>
+            <span>
+              <Typography variant="dashboardUrl" className={classes.rightItem}>
+                app.vetrinalive.it/french-store
+                <ExternalLink className={classes.icon} />
+              </Typography>
+            </span>
+          </Grid>
+        </Grid>
+      )}
+    </>
   );
 }
 

@@ -1,7 +1,6 @@
 import { vetrina } from "../axiosInstances";
 
 export const getShopInfo = async (url) => {
-  console.log("im in shop");
   const config = {
     headers: {
       "Content-type": "application/json",

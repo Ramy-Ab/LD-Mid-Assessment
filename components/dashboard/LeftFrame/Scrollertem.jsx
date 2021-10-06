@@ -1,9 +1,9 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Link, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
-import test from "../../../assets/images/extensionSlider/ownDomain.jpg";
 
-export default function ScrollerItem({ img, desc }) {
+export default function ScrollerItem({ img, desc, id }) {
+  const link = `https://admin.vetrinalive.it/extensions/${id}`;
   const classes = useStyles();
   return (
     <Stack xs={6} md={6} className={classes.container}>
@@ -15,15 +15,19 @@ export default function ScrollerItem({ img, desc }) {
         width={150}
         layout="fixed"
       />
-      <Typography xs={6} className={classes.text}>
-        {desc}
-      </Typography>
+      <a className={classes.link} href={link}>
+        <Typography xs={6} className={classes.text}>
+          {desc}
+        </Typography>
+      </a>
     </Stack>
   );
 }
 
 const useStyles = makeStyles((theme) => ({
-  container: {},
+  container: {
+    cursor: "pointer",
+  },
   text: {
     color: "#103B66",
     fontFamily: "SourceSansPro",
@@ -33,5 +37,8 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     borderRadius: "10px",
+  },
+  link: {
+    textDecoration: "none",
   },
 }));

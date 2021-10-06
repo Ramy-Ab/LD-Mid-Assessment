@@ -18,7 +18,7 @@ export default function NavBar() {
       <AppBar position="static" className={classes.appBar} color="white">
         <Toolbar>
           <Grid container className={classes.container}>
-            <Grid item xs={2}>
+            <Grid item xs={2} className={classes.center}>
               <Typography
                 variant="cardOrderPrice"
                 component="div"
@@ -59,6 +59,11 @@ const useStyle = makeStyles((theme) => ({
     position: "fixed",
     zIndex: "1000",
   },
+  center: {
+    display: "flex",
+    alignItems: "center",
+  },
+
   container: {
     display: "flex",
     justifyContent: "space-between",

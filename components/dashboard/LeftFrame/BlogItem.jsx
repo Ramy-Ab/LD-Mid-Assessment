@@ -10,17 +10,20 @@ export default function BlogItem({
   read_time,
 }) {
   const classes = useStyles();
+
   return (
     <>
       <Grid className={classes.container} container xs={12} md={6}>
         <Grid item className={classes.rightGrid}>
-          <Image
-            src={image_url}
-            alt="ok"
-            height={100}
-            width={100}
-            layout="fixed"
-          />
+          <a className={classes.link} href={link}>
+            <Image
+              src={image_url}
+              alt="ok"
+              height={100}
+              width={100}
+              layout="fixed"
+            />
+          </a>
         </Grid>
         <Grid item xs={7}>
           <Stack spacing={1}>
@@ -40,11 +43,15 @@ export default function BlogItem({
 const useStyles = makeStyles((theme) => ({
   container: {
     marginBottom: "1rem",
+    cursor: "pointer",
   },
   BlogFooter: {
     textDecoration: "underline",
   },
   rightGrid: {
     marginRight: "1rem",
+  },
+  link: {
+    textDecoration: "none",
   },
 }));

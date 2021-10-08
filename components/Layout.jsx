@@ -14,7 +14,9 @@ export default function Layout({ children }) {
         <Grid className={classes.main} item xs={11} sm={10} md={10}>
           <Stack>
             <NavBar />
-            {children}
+            <Grid container className={classes.page}>
+              {children}
+            </Grid>
           </Stack>
         </Grid>
       </Grid>
@@ -28,5 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   main: {
     marginLeft: "auto",
+  },
+  page: {
+    marginTop: "64px",
   },
 }));

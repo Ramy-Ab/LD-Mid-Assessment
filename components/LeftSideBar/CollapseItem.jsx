@@ -12,9 +12,12 @@ import {
   ExpandMore,
   StarBorder,
 } from "@mui/icons-material";
+import { useRouter } from "next/router";
 
 export default function CollapseItem({ icon, text, children }) {
   const classes = useStyles();
+  const router = useRouter();
+
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -33,9 +36,15 @@ export default function CollapseItem({ icon, text, children }) {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List className={classes.collapseItem} component="div" disablePadding>
           {children.map((subItem) => (
-            <ListItemButton className={classes.item} sx={{ pl: 4 }}>
+            <ListItemButton
+              className={classes.item}
+              sx={{ pl: 4 }}
+              onClick={() => router.push(subItem.url)}
+            >
               <ListItemText
-                primary={<Typography variant="bold1"> {subItem} </Typography>}
+                primary={
+                  <Typography variant="bold1"> {subItem.text} </Typography>
+                }
               />
             </ListItemButton>
           ))}

@@ -63,6 +63,7 @@ const useStyle = makeStyles((theme) => ({
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
     position: "fixed",
     zIndex: "1000",
+    marginBottom: "64px",
   },
   center: {
     display: "flex",

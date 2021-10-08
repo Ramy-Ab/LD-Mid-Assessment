@@ -5,12 +5,16 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function SubItem({ icon, text }) {
+export default function SubItem({ icon, text, url, history }) {
+  const router = useRouter();
   const classes = useStyles();
+
   return (
     <>
-      <ListItemButton className={classes.item}>
+      <ListItemButton className={classes.item} onClick={() => router.push(url)}>
         <ListItemIcon className={classes.icon} className={classes.icon}>
           {icon}
         </ListItemIcon>

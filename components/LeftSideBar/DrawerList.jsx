@@ -26,12 +26,18 @@ export default function DrawerList() {
       {listeItems.map((item, idx) => (
         <>
           {item.type === "item" && (
-            <SubItem key={idx} icon={item.icon} text={item.text} />
+            <SubItem
+              key={idx}
+              icon={item.icon}
+              url={item.url}
+              text={item.text}
+            />
           )}
           {item.type === "collapse" && (
             <CollapseItem
               key={idx}
               icon={item.icon}
+              url={item.url}
               text={item.text}
               children={item.children}
             />
@@ -43,7 +49,7 @@ export default function DrawerList() {
 
       {listeItems2.map((item, idx) => (
         <>
-          <SubItem key={idx} icon={item.icon} text={item.text} />
+          <SubItem key={idx} icon={item.icon} url={item.url} text={item.text} />
         </>
       ))}
     </List>

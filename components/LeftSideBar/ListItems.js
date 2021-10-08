@@ -17,17 +17,30 @@ import {
   Language,
   PersonOutline,
 } from "@mui/icons-material";
+import { routes } from "../../utils/constants/routes";
 
 export const listeItems = [
-  { type: "item", icon: <Home size={20} />, text: "Dashboard" },
-  { type: "item", icon: <ShoppingCart size={20} />, text: "Catalogue" },
   {
     type: "item",
+    url: routes.dashboard,
+    icon: <Home size={20} />,
+    text: "Dashboard",
+  },
+  {
+    type: "item",
+    url: routes.catalogue,
+    icon: <ShoppingCart size={20} />,
+    text: "Catalogue",
+  },
+  {
+    type: "item",
+    url: routes.orders,
     icon: <FormatListBulleted sx={{ fontSize: 20 }} />,
     text: "Orders",
   },
   {
     type: "item",
+    url: routes.customers,
     icon: <PersonOutline sx={{ fontSize: 20 }} />,
     text: "Customers",
   },
@@ -36,23 +49,44 @@ export const listeItems = [
     icon: <Target size={20} />,
     text: "Marketing",
     children: [
-      "Discount codes",
-      "Exit intent",
-      "Checkout Features",
-      "Post-purchase conversion",
-      "Cart abandonment",
-      "Timer checkout",
-      "Sell on Social",
-      "Special Offer",
-      "Seasonal Offer",
+      { text: "Discount codes", url: routes.discount_codes },
+      { text: "Exit intent", url: routes.exit_intent },
+      { text: "Checkout Features" },
+      { text: "Post-purchase " },
+      { text: "Cart abandonment" },
+      { text: "Timer checkout" },
+      { text: "Sell on Social" },
+      { text: "Special Offer" },
+      { text: "Seasonal Offer" },
     ],
   },
-  { type: "item", icon: <Truck size={20} />, text: "Delivery options" },
-  { type: "item", icon: <DollarSign size={20} />, text: "Payment Options" },
-  { type: "item", icon: <Brush sx={{ fontSize: 20 }} />, text: "Store Design" },
-  { type: "item", icon: <CreditCard size={20} />, text: "Subscriptons" },
   {
     type: "item",
+    url: routes.delivery_options,
+    icon: <Truck size={20} />,
+    text: "Delivery options",
+  },
+  {
+    type: "item",
+    url: routes.payment_options,
+    icon: <DollarSign size={20} />,
+    text: "Payment Options",
+  },
+  {
+    type: "item",
+    url: routes.store_design,
+    icon: <Brush sx={{ fontSize: 20 }} />,
+    text: "Store Design",
+  },
+  {
+    type: "item",
+    url: routes.subscriptions,
+    icon: <CreditCard size={20} />,
+    text: "Subscriptons",
+  },
+  {
+    type: "item",
+    url: routes.integrations,
     icon: (
       <svg
         width="20"
@@ -69,12 +103,27 @@ export const listeItems = [
     ),
     text: "Integrations",
   },
-  { type: "item", icon: <Settings />, text: "Settings" },
-  { type: "item", icon: <LogOut />, text: "Log out" },
+  { type: "item", url: routes.settings, icon: <Settings />, text: "Settings" },
+  { type: "item", url: routes.dashboard, icon: <LogOut />, text: "Log out" },
 ];
 
 export const listeItems2 = [
-  { type: "item", icon: <HelpCircle size={20} />, text: "Customer Support" },
-  { type: "item", icon: <Share2 size={20} />, text: "Share your shop" },
-  { type: "item", icon: <Eye size={20} />, text: "View your shop" },
+  {
+    type: "item",
+    url: routes.customer_support,
+    icon: <HelpCircle size={20} />,
+    text: "Customer Support",
+  },
+  {
+    type: "item",
+    url: routes.share_shop,
+    icon: <Share2 size={20} />,
+    text: "Share your shop",
+  },
+  {
+    type: "item",
+    url: routes.view_shop,
+    icon: <Eye size={20} />,
+    text: "View your shop",
+  },
 ];

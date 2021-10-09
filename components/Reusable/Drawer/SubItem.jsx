@@ -7,11 +7,15 @@ import {
 import { makeStyles } from "@mui/styles";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { useDrawer } from "../../../contexts/DrawerContext";
+import Link from "next/link";
 
 export default function SubItem({ icon, text, url }) {
   const router = useRouter();
   const [hover, setHover] = useState(false);
   const [myPath, setMyPath] = useState(router.pathname);
+
+  const open = useDrawer();
 
   const mouseIn = () => {
     setHover(true);
@@ -20,7 +24,7 @@ export default function SubItem({ icon, text, url }) {
     setHover(false);
   };
   const clickHandler = () => {
-    router.push(url);
+    // router.push(url);
     setMyPath(url);
   };
 
@@ -28,9 +32,9 @@ export default function SubItem({ icon, text, url }) {
     setMyPath(router.pathname);
   }, [router]);
 
-  const classes = useStyles({ hover, myPath, url });
+  const classes = useStyles({ hover, myPath, url, open });
   return (
-    <>
+    <Link href={url}>
       <ListItemButton
         className={classes.item}
         onMouseEnter={mouseIn}
@@ -51,7 +55,7 @@ export default function SubItem({ icon, text, url }) {
           }
         />
       </ListItemButton>
-    </>
+    </Link>
   );
 }
 const useStyles = makeStyles((theme) => ({
@@ -62,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
       props.myPath === props.url ? "3px solid #21B8F9" : "",
   },
   icon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: (props) => (props.open ? "0px" : "10px"),
     minWidth: "35px",
     color: (props) =>
       props.hover || props.myPath === props.url
@@ -69,6 +77,7 @@ const useStyles = makeStyles((theme) => ({
         : theme.palette.blackTeinte.main,
   },
   text: {
+    display: (props) => (props.open ? "" : "none"),
     color: (props) =>
       props.hover || props.myPath === props.url
         ? theme.palette.primary.main

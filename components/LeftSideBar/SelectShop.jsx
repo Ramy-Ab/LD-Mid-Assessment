@@ -1,9 +1,11 @@
 import { FormControl, Grid, MenuItem, Select, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
+import { useDrawer } from "../../contexts/DrawerContext";
 
 export default function SelectShop() {
-  const classes = useStyle();
+  const open = useDrawer();
+  const classes = useStyle({ open });
   const [store, setStore] = React.useState("Fenoh Store");
 
   const handleChange = (event) => {
@@ -35,6 +37,7 @@ export default function SelectShop() {
 
 const useStyle = makeStyles((theme) => ({
   container: {
+    display: (props) => (props.open ? "flex" : "none"),
     marginTop: "20px",
     [theme.breakpoints.down("sm")]: {
       display: "none",

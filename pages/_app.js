@@ -8,6 +8,7 @@ import { CacheProvider } from "@emotion/react";
 import { theme } from "../helpers/theme";
 import createEmotionCache from "../helpers/createEmotionCach.js";
 import Layout from "../components/Reusable/Layout";
+import { DrawerProvider } from "../contexts/DrawerContext";
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -24,9 +25,11 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <DrawerProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </DrawerProvider>
       </ThemeProvider>
       {/* </CacheProvider> */}
     </>

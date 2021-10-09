@@ -1,4 +1,4 @@
-import { vetrina } from "../axiosInstances";
+import { vetrina } from "../helpers/axiosInstances";
 
 export const getPersonalInfo = async (url) => {
   var error;

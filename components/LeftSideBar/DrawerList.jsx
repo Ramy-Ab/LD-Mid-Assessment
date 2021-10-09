@@ -5,9 +5,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@mui/styles";
 import { Divider, Typography } from "@mui/material";
-import { listeItems, listeItems2 } from "./ListItems";
-import CollapseItem from "./CollapseItem";
-import SubItem from "./SubItem";
+import { listeItems, listeItems2 } from "../../utils/ListItems";
+import CollapseItem from "../Reusable/Drawer/CollapseItem";
+import SubItem from "../Reusable/Drawer/SubItem";
 
 export default function DrawerList() {
   const classes = useStyles();

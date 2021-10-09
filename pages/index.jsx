@@ -1,7 +1,7 @@
 import Dashboard from "../components/dashboard/Dashboard";
 import useSwr from "swr";
-import { getBlogPosts } from "../helpers/api/getBlogPosts";
-import { getExtensions } from "../helpers/api/getExtensions";
+import { getBlogPosts } from "../api/getBlogPosts";
+import { getExtensions } from "../api/getExtensions";
 
 export default function Home({ blogs, extensions }) {
   return (

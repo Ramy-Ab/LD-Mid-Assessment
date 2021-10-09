@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ExternalLink } from "react-feather";
 import useSwr from "swr";
-import { getPersonalInfo } from "../../helpers/api/getPersonalInfo";
+import { getPersonalInfo } from "../../../api/getPersonalInfo";
 export default function Header() {
   const url = "/admin/me";
   const { data } = useSwr(url, getPersonalInfo);

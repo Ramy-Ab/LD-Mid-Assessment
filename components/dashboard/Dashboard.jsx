@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Header from "./Header";
+import Header from "./Header/Header";
 import LeftFrame from "./LeftFrame/LeftFrame";
 import RightFrame from "./RightFrame/RightFrame";
 

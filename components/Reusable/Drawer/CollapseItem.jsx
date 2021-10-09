@@ -5,7 +5,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@mui/styles";
 import { Collapse, Divider, Typography } from "@mui/material";
-import { listeItems, listeItems2 } from "./ListItems";
+import { listeItems, listeItems2 } from "../../../utils/ListItems";
 import {
   AllInbox,
   ExpandLess,

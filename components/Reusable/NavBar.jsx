@@ -8,8 +8,11 @@ import { Zap } from "react-feather";
 import { Badge, Grid } from "@mui/material";
 import useSwr from "swr";
 import { getPersonalInfo } from "../../api/getPersonalInfo";
+import { useDrawer } from "../../contexts/DrawerContext";
 
 export default function NavBar() {
+  const open = useDrawer();
+
   const url = "/admin/me";
   const { data } = useSwr(url, getPersonalInfo);
   const personelleInfo = data?.data;
@@ -19,8 +22,14 @@ export default function NavBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" className={classes.appBar} color="white">
         <Toolbar>
-          <Grid container className={classes.container}>
-            <Grid item xs={2} className={classes.center}>
+          <Grid
+            container
+            xs={12}
+            sm={open ? 10.5 : 12}
+            md={open ? 10.5 : 12}
+            className={classes.container}
+          >
+            <Grid className={classes.center}>
               <Typography
                 variant="cardOrderPrice"
                 component="div"
@@ -29,7 +38,7 @@ export default function NavBar() {
                 Dashboard
               </Typography>
             </Grid>
-            <Grid item className={classes.item} xs={3}>
+            <Grid item className={classes.item} xs={2}>
               <Button color="inherit">
                 {" "}
                 <Zap />
@@ -76,8 +85,8 @@ const useStyle = makeStyles((theme) => ({
   },
   item: {
     display: "flex",
-    justifyContent: "flex-start",
-    marginRight: "1rem",
+    justifyContent: "flex-end",
+    marginRight: "3rem",
     [theme.breakpoints.down("md")]: {
       display: "none",
     },

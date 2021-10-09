@@ -5,7 +5,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { makeStyles } from "@mui/styles";
 import { Collapse, Divider, Typography } from "@mui/material";
-import { listeItems, listeItems2 } from "../../../utils/ListItems";
 import {
   AllInbox,
   ExpandLess,
@@ -14,9 +13,11 @@ import {
 } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import SubItem from "./SubItem";
+import { useDrawer } from "../../../contexts/DrawerContext";
 
 export default function CollapseItem({ icon, text, children }) {
-  const classes = useStyles();
+  const openDrawer = useDrawer();
+  const classes = useStyles({ openDrawer });
   const router = useRouter();
 
   const [open, setOpen] = React.useState(false);
@@ -53,8 +54,13 @@ export default function CollapseItem({ icon, text, children }) {
 const useStyles = makeStyles((theme) => ({
   listeItem: {
     padding: "0",
+    display: (props) => (props.openDrawer ? "" : "none"),
   },
   icon: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginButtom: (props) => (props.openDrawer ? "0px" : "16px"),
     minWidth: "35px",
     color: "#103B66",
   },

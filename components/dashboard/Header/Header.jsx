@@ -2,6 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ExternalLink } from "react-feather";
 import useSwr from "swr";
+import Link from "next/link";
 import { getPersonalInfo } from "../../../api/getPersonalInfo";
 export default function Header() {
   const url = "/admin/me";
@@ -19,12 +20,17 @@ export default function Header() {
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={4}>
             <span>
-              <Typography variant="dashboardUrl" className={classes.rightItem}>
-                app.vetrinalive.it/french-store
-                <ExternalLink className={classes.icon} />
-              </Typography>
+              <Link href="https://app.vetrinalive.it/ramy">
+                <Typography
+                  variant="dashboardUrl"
+                  className={classes.rightItem}
+                >
+                  app.vetrinalive.it/french-store
+                  <ExternalLink className={classes.icon} />
+                </Typography>
+              </Link>
             </span>
           </Grid>
         </Grid>
@@ -47,11 +53,12 @@ const useStyles = makeStyles((theme) => ({
     padding: "2rem",
   },
   rightItem: {
-    // paddingRight: "25%",
     textDecoration: "underline",
     display: "flex",
+    justifyContent: "flex-end",
     alignItems: "center",
     paddingRight: "0",
+    cursor: "pointer",
   },
   icon: {
     marginLeft: "1rem",

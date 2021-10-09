@@ -7,7 +7,7 @@ import { makeStyles } from "@mui/styles";
 import { Zap } from "react-feather";
 import { Badge, Grid } from "@mui/material";
 import useSwr from "swr";
-import { getPersonalInfo } from "../helpers/api/getPersonalInfo";
+import { getPersonalInfo } from "../../api/getPersonalInfo";
 
 export default function NavBar() {
   const url = "/admin/me";

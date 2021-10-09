@@ -1,7 +1,7 @@
 import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight, Eye } from "react-feather";
-import Spinner from "../../Spinner";
+import Spinner from "../../Reusable/Spinner";
 import DateMenu from "./Menu";
 import Menu from "./Menu";
 

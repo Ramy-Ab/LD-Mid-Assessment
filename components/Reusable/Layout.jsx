@@ -1,6 +1,6 @@
 import { Grid, Stack } from "@mui/material";
-import LeftSideBar from "../components/LeftSideBar/LeftSideBar";
-import NavBar from "../components/NavBar";
+import LeftSideBar from "../LeftSideBar";
+import NavBar from "./NavBar";
 import { makeStyles } from "@mui/styles";
 
 export default function Layout({ children }) {

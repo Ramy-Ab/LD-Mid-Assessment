@@ -3,8 +3,7 @@ import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import { useEffect } from "react";
 import useSwr from "swr";
-import { getShopInfo } from "../../../helpers/api/getShopInfo";
-import Spinner from "../../Spinner";
+import { getShopInfo } from "../../../api/getShopInfo";
 import OrdersCard from "./OrdersCard";
 import VisitorCard from "./VisitorCard";
 

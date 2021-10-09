@@ -17,7 +17,7 @@ import {
   Language,
   PersonOutline,
 } from "@mui/icons-material";
-import { routes } from "../../utils/constants/routes";
+import { routes } from "./constants/routes";
 
 export const listeItems = [
   {

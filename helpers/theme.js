@@ -22,6 +22,9 @@ export const theme = createTheme({
     blueTinte: {
       main: "#E9F8FE",
     },
+    blackTeinte : {
+      main : '#103B66'
+    },
     secondary: {
       main: "#19857b",
     },

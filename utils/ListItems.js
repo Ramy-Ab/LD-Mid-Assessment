@@ -104,7 +104,7 @@ export const listeItems = [
     text: "Integrations",
   },
   { type: "item", url: routes.settings, icon: <Settings />, text: "Settings" },
-  { type: "item", url: routes.dashboard, icon: <LogOut />, text: "Log out" },
+  { type: "item", url: routes.logout, icon: <LogOut />, text: "Log out" },
 ];
 
 export const listeItems2 = [

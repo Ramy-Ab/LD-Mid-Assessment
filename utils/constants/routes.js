@@ -3,7 +3,7 @@ export const routes = {
   view_shop: "/view_shop",
   subscriptions: "/subscriptions",
   store_design: "/store_design",
-  share_shop: "/view_shop",
+  share_shop: "/share_shop",
   settings: "/settings",
   payment_options: "/view_shop",
   orders: "/orders",
@@ -15,4 +15,5 @@ export const routes = {
   customers: "/customers",
   discount_codes: "/marketing/discount_codes",
   exit_intent: "/marketing/exit_intent",
+  logout: "logout",
 };

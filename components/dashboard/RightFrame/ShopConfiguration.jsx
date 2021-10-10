@@ -1,9 +1,13 @@
 import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight, Tool } from "react-feather";
+import { useInfo } from "../../../contexts/InfoContext";
+import Spinner from "../../Reusable/Spinner";
 
 export default function ShopConfiguration() {
   const classes = useStyles();
+  const info = useInfo();
+  const { data, error } = info;
   return (
     <>
       <Paper className={classes.paper} elevation={3}>
@@ -14,10 +18,16 @@ export default function ShopConfiguration() {
               <Typography variant="cardsTitle">Configure your shop</Typography>
             </Grid>
           </Grid>
-          <Stack>
-            <Typography className={classes.configPercentage}>45%</Typography>
-            <Typography className={classes.completed}>Completed</Typography>
-          </Stack>
+          {!data && !error && <Spinner />}
+          {data && !error && (
+            <Stack>
+              <Typography className={classes.configPercentage}>
+                {data?.shops[0].products_allowed}%
+              </Typography>
+              <Typography className={classes.completed}>Completed</Typography>
+            </Stack>
+          )}
+
           <Typography className={classes.configText}>
             Complete all the steps to have a complete shop to best present to
             your customers.{" "}

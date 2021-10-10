@@ -1,17 +1,13 @@
 import { vetrina } from "../helpers/axiosInstances";
+import { errorEvent } from "../helpers/errorHandler";
 
 export const getPersonalInfo = async (url) => {
   var error;
-  const config = {
-    headers: {
-      "Content-type": "application/json",
-      Authorization: `Bearer TQrxzVU59KGKxccyaGWkytMzuLuvEfdGQR8lY0xpTYNLD2VfiVyYRVCmHCrKSeaSspU7KfdElvP7afiu`,
-    },
-  };
   try {
-    var { data } = await vetrina.get(url, config);
+    var { data } = await vetrina.get(url);
   } catch (e) {
-    error = e.response.data;
+    console.log("errrror : ", errorEvent(e));
+    error = errorEvent(e);
   }
   return { data, error };
 };

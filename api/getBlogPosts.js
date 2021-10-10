@@ -2,7 +2,6 @@ import { vetrina } from "../helpers/axiosInstances";
 
 export const getBlogPosts = async () => {
   var error;
-
   try {
     var { data } = await vetrina.get("/blog-posts");
   } catch (e) {

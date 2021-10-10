@@ -7,7 +7,8 @@ import Spinner from "../../Reusable/Spinner";
 export default function ShopConfiguration() {
   const classes = useStyles();
   const info = useInfo();
-  const { data, error } = info;
+  const data = info?.data;
+  const error = info?.error;
   return (
     <>
       <Paper className={classes.paper} elevation={3}>

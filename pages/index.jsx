@@ -2,12 +2,15 @@ import Dashboard from "../components/dashboard/Dashboard";
 import useSwr from "swr";
 import { getBlogPosts } from "../api/getBlogPosts";
 import { getExtensions } from "../api/getExtensions";
+import { InfoProvider } from "../contexts/InfoContext";
 
 export default function Home({ blogs, extensions }) {
   return (
     <>
       {blogs && extensions && (
-        <Dashboard blogs={blogs} extensions={extensions} />
+        <InfoProvider>
+          <Dashboard blogs={blogs} extensions={extensions} />
+        </InfoProvider>
       )}
     </>
   );

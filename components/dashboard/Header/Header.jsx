@@ -3,38 +3,33 @@ import { makeStyles } from "@mui/styles";
 import { ExternalLink } from "react-feather";
 import useSwr from "swr";
 import Link from "next/link";
-import { getPersonalInfo } from "../../../api/getPersonalInfo";
+import { fetcher } from "../../../api/fetcher";
+import { personelInfoUrl } from "../../../utils/constants/apis";
 export default function Header() {
-  const url = "/admin/me";
-  const { data } = useSwr(url, getPersonalInfo);
+  const { data } = useSwr(personelInfoUrl, fetcher);
   const personelleInfo = data?.data;
   const error = data?.error;
   const classes = useStyles();
   return (
     <>
-      {personelleInfo && !error && (
-        <Grid className={classes.container} container>
-          <Grid item xs={12} md={4}>
-            <Typography variant="dashboardHeader">
-              Welcome {personelleInfo.fullname}!
-            </Typography>
-          </Grid>
-
-          <Grid item xs={12} md={4}>
-            <span>
-              <Link href="https://app.vetrinalive.it/ramy">
-                <Typography
-                  variant="dashboardUrl"
-                  className={classes.rightItem}
-                >
-                  app.vetrinalive.it/french-store
-                  <ExternalLink className={classes.icon} />
-                </Typography>
-              </Link>
-            </span>
-          </Grid>
+      <Grid className={classes.container} container>
+        <Grid item xs={12} md={4}>
+          <Typography variant="dashboardHeader">
+            Welcome {personelleInfo && !error && personelleInfo.fullname}!
+          </Typography>
         </Grid>
-      )}
+
+        <Grid item xs={12} md={4}>
+          <span>
+            <Link href="https://app.vetrinalive.it/ramy">
+              <Typography variant="dashboardUrl" className={classes.rightItem}>
+                app.vetrinalive.it/french-store
+                <ExternalLink className={classes.icon} />
+              </Typography>
+            </Link>
+          </span>
+        </Grid>
+      </Grid>
     </>
   );
 }

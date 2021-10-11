@@ -7,14 +7,14 @@ import { makeStyles } from "@mui/styles";
 import { Zap } from "react-feather";
 import { Badge, Grid } from "@mui/material";
 import useSwr from "swr";
-import { getPersonalInfo } from "../../api/getPersonalInfo";
 import { useDrawer } from "../../contexts/DrawerContext";
+import { fetcher } from "../../api/fetcher";
+import { personelInfoUrl } from "../../utils/constants/apis";
 
 export default function NavBar() {
   const open = useDrawer();
 
-  const url = "/admin/me";
-  const { data } = useSwr(url, getPersonalInfo);
+  const { data } = useSwr(personelInfoUrl, fetcher);
   const personelleInfo = data?.data;
   const error = data?.error;
   const classes = useStyle();

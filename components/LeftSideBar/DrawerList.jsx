@@ -1,8 +1,6 @@
 import * as React from "react";
 import List from "@mui/material/List";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
+
 import { makeStyles } from "@mui/styles";
 import { Divider, Typography } from "@mui/material";
 import { listeItems, listeItems2 } from "../../utils/ListItems";
@@ -23,11 +21,11 @@ export default function DrawerList() {
       component="nav"
       aria-labelledby="nested-list-subheader"
     >
-      {listeItems.map((item, idx) => (
+      {listeItems.map((item) => (
         <>
           {item.type === "item" && (
             <SubItem
-              key={idx}
+              key={item.text}
               icon={item.icon}
               url={item.url}
               text={item.text}
@@ -35,7 +33,7 @@ export default function DrawerList() {
           )}
           {item.type === "collapse" && (
             <CollapseItem
-              key={idx}
+              key={item.text}
               icon={item.icon}
               url={item.url}
               text={item.text}
@@ -47,9 +45,14 @@ export default function DrawerList() {
 
       <Divider className={classes.divider} />
 
-      {listeItems2.map((item, idx) => (
+      {listeItems2.map((item) => (
         <>
-          <SubItem key={idx} icon={item.icon} url={item.url} text={item.text} />
+          <SubItem
+            key={item.text}
+            icon={item.icon}
+            url={item.url}
+            text={item.text}
+          />
         </>
       ))}
     </List>

@@ -34,7 +34,7 @@ export default function SubItem({ icon, text, url }) {
 
   const classes = useStyles({ hover, myPath, url, open });
   return (
-    <Link href={url}>
+    <Link href={url ? url : "/"}>
       <ListItemButton
         className={classes.item}
         onMouseEnter={mouseIn}

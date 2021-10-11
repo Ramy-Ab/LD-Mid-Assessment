@@ -5,7 +5,7 @@ export const routes = {
   store_design: "/store_design",
   share_shop: "/share_shop",
   settings: "/settings",
-  payment_options: "/view_shop",
+  payment_options: "/payment_options",
   orders: "/orders",
   integrations: "/integrations",
   delivery_options: "/delivery_options",

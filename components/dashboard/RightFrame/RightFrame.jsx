@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-start",
     padding: "1rem",
+    paddingLeft: "0",
   },
   shop: {
     zIndex: "2",

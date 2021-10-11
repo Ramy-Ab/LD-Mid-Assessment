@@ -6,6 +6,6 @@ export const vetrina = axios.create({
   headers: {
     "Content-Type": "application/json",
     Authorization:
-      "Bearer xTQrxzVU59KGKxccyaGWkytMzuLuvEfdGQR8lY0xpTYNLD2VfiVyYRVCmHCrKSeaSspU7KfdElvP7afiu",
+      "Bearer TQrxzVU59KGKxccyaGWkytMzuLuvEfdGQR8lY0xpTYNLD2VfiVyYRVCmHCrKSeaSspU7KfdElvP7afiu",
   },
 });

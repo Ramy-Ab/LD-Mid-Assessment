@@ -22,8 +22,8 @@ export const theme = createTheme({
     blueTinte: {
       main: "#E9F8FE",
     },
-    blackTeinte : {
-      main : '#103B66'
+    blackTeinte: {
+      main: "#103B66",
     },
     secondary: {
       main: "#19857b",
@@ -73,6 +73,13 @@ export const theme = createTheme({
       fontSize: "20px",
       lineHeight: "25px",
       color: "#103B66",
+    },
+    whiteCardTitle: {
+      color: "#FFFFFF",
+      fontFamily: "NotoSansHK",
+      fontWeight: "700",
+      fontSize: "17px",
+      lineHeight: "22px",
     },
     cardsPeriod: {
       fontFamily: "NotoSansHK",

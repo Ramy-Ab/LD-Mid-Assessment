@@ -1,12 +1,12 @@
 import { Paper, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-export default function CardLayout({ children }) {
+export default function CardLayout({ children, spaces }) {
   const classes = useStyles();
   return (
     <>
       <Paper className={classes.paper} elevation={3}>
-        <Stack spacing={3} className={classes.card}>
+        <Stack spacing={spaces ? spaces : 3} className={classes.card}>
           {children}
         </Stack>
       </Paper>

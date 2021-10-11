@@ -1,11 +1,9 @@
-import { makeStyles } from "@mui/styles";
 import ScrollerItem from "./Scrollertem";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function ScrollerItems({ extensions }) {
-  const classes = useStyles();
   const settings = {
     dots: false,
     infinite: true,
@@ -32,5 +30,3 @@ export default function ScrollerItems({ extensions }) {
     </>
   );
 }
-
-const useStyles = makeStyles((theme) => ({}));

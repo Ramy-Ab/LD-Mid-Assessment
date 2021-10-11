@@ -1,8 +1,9 @@
 import { Paper, Stack } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
-export default function CardLayout({ children, spaces }) {
-  const classes = useStyles();
+export default function CardLayout({ children, spaces, heightMin }) {
+  const height = heightMin;
+  const classes = useStyles({ heightMin });
   return (
     <>
       <Paper className={classes.paper} elevation={3}>
@@ -16,7 +17,7 @@ export default function CardLayout({ children, spaces }) {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    minHeight: "226px",
+    minHeight: (props) => (props.heightMin ? props.heightMin : "226px"),
     borderRadius: "10px",
     marginBottom: "5px",
     padding: "24px",

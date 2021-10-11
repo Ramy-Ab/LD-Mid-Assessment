@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight } from "react-feather";
 
-export default function CardFooter() {
+export default function CardFooter({ footer }) {
   const classes = useStyles();
   return (
     <>
@@ -12,7 +12,7 @@ export default function CardFooter() {
           mr={2}
           variant="bluetext1"
         >
-          Do you want more visits?contact us!{" "}
+          {footer}
         </Typography>
         <ArrowRight className={classes.arrow} />
       </Grid>

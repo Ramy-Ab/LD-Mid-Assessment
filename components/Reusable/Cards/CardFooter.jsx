@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight } from "react-feather";
 
-export default function CardFooter({ footer }) {
+export default function CardFooter({ footer, arrow }) {
   const classes = useStyles();
   return (
     <>
@@ -14,7 +14,7 @@ export default function CardFooter({ footer }) {
         >
           {footer}
         </Typography>
-        <ArrowRight className={classes.arrow} />
+        {!arrow && <ArrowRight className={classes.arrow} />}
       </Grid>
     </>
   );

@@ -1,5 +1,3 @@
-import { Avatar, Button, Grid, Paper, Stack, Typography } from "@mui/material";
-import { makeStyles } from "@mui/styles";
 import { Headphones } from "react-feather";
 import CardLayout from "../../Reusable/Cards";
 import SupportBody from "../../Reusable/Cards/CardBody/SupportBody";

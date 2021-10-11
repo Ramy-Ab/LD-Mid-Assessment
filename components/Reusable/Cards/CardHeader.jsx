@@ -1,16 +1,25 @@
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import { Eye } from "react-feather";
 import DateMenu from "../../dashboard/LeftFrame/Menu";
 
-export default function CardHeader({ title, rightSubTitle, icon }) {
-  const classes = useStyles();
+export default function CardHeader({
+  title,
+  rightSubTitle,
+  icon,
+  iconColor,
+  whiteTitle,
+}) {
+  const classes = useStyles({ iconColor, whiteTitle });
+  console.log(whiteTitle);
   return (
     <>
       <Grid className={classes.cardHeader} container xs={12}>
         <Grid className={classes.rightGreed} item xs={rightSubTitle ? 6 : 12}>
           {icon}
-          <Typography variant="cardsTitle" className={classes.title}>
+          <Typography
+            variant={whiteTitle ? "whiteCardTitle" : "cardsTitle"}
+            className={classes.title}
+          >
             {title}
           </Typography>
         </Grid>

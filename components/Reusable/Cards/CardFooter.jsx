@@ -2,8 +2,8 @@ import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ArrowRight } from "react-feather";
 
-export default function CardFooter({ footer, arrow }) {
-  const classes = useStyles();
+export default function CardFooter({ footer, arrow, color }) {
+  const classes = useStyles({ color });
   return (
     <>
       <Grid container>
@@ -11,6 +11,7 @@ export default function CardFooter({ footer, arrow }) {
           sx={{ textDecoration: "underline" }}
           mr={2}
           variant="bluetext1"
+          className={classes.text}
         >
           {footer}
         </Typography>
@@ -21,7 +22,10 @@ export default function CardFooter({ footer, arrow }) {
 }
 
 const useStyles = makeStyles((theme) => ({
+  text: {
+    color: (props) => (props.color ? props.color : ""),
+  },
   arrow: {
-    color: "#21B8F9",
+    color: (props) => (props.color ? props.color : "#21B8F9"),
   },
 }));

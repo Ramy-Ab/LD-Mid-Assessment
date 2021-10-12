@@ -58,6 +58,7 @@ export default function SubItem({ icon, text, url }) {
     </Link>
   );
 }
+
 const useStyles = makeStyles((theme) => ({
   item: {
     padding: "0 !important",

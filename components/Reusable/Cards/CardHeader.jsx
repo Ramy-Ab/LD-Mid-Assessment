@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import DateMenu from "../../dashboard/LeftFrame/Menu";
+import DateMenu from "../../dashboard/LeftFrame/TopCards/Menu";
 
 export default function CardHeader({
   title,
@@ -10,7 +10,6 @@ export default function CardHeader({
   whiteTitle,
 }) {
   const classes = useStyles({ iconColor, whiteTitle });
-  console.log(whiteTitle);
   return (
     <>
       <Grid className={classes.cardHeader} container xs={12}>
@@ -25,7 +24,7 @@ export default function CardHeader({
         </Grid>
         {rightSubTitle && (
           <Grid className={classes.leftGreed} item xs={6}>
-            <Typography variant="cardPeriod"> {rightSubTitle}</Typography>
+            <Typography variant="cardsPeriod"> {rightSubTitle}</Typography>
             <DateMenu />
           </Grid>
         )}

@@ -6,7 +6,7 @@ import CardHeader from "../../Reusable/Cards/CardHeader";
 import InviteFreindBody from "../../Reusable/Cards/CardBody/InviteFreindBody";
 export default function InviteFreinds() {
   const title = "Invite freind";
-  const footer = "Complete the setup!";
+  const footer = "Start inviting friends!";
   return (
     <>
       <CardLayout>

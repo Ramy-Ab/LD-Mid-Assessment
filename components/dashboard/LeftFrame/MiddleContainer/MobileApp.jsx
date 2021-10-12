@@ -2,18 +2,18 @@ import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import { ArrowRight } from "react-feather";
-import mobile from "../../../assets/images/Home.png";
-import appStore from "../../../assets/images/appStore.png";
-import playStore from "../../../assets/images/playStore.png";
+import mobile from "../../../../assets/images/Home.png";
+import appStore from "../../../../assets/images/appStore.png";
+import playStore from "../../../../assets/images/playStore.png";
 export default function MobileApp() {
   const classes = useStyles();
   return (
     <>
       <Paper className={classes.paper} elevation={5}>
-        <Stack spacing={5} xs={12}>
+        <Stack spacing={2} xs={12}>
           <Grid className={classes.topContainer} container xs={12}>
             <Grid item xs={7}>
-              <Stack spacing={2}>
+              <Stack spacing={1}>
                 <Typography className={classes.bodyText}>
                   Sell your products on your exclusive APP published on the
                   stores{" "}
@@ -37,6 +37,7 @@ export default function MobileApp() {
                 alt="Picture of the author"
                 width={105}
                 height={226}
+                layout="fixed"
               />
             </Grid>
           </Grid>
@@ -45,16 +46,16 @@ export default function MobileApp() {
               <Image
                 src={appStore}
                 alt="Picture of the author"
-                width={125}
+                width={124}
                 height={40}
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={5}>
               <Image
                 src={playStore}
                 alt="Picture of the author"
                 width={141}
-                height={50}
+                height={40}
               />
             </Grid>
           </Grid>
@@ -66,15 +67,16 @@ export default function MobileApp() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    minHeight: "343px",
     backgroundColor: "#F3A35C",
     padding: "24px",
     borderRadius: "10px",
+    minHeight: "347px",
   },
   topContainer: {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    marginTop: "0px",
   },
   bodyText: {
     color: "#FFFFFF",

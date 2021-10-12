@@ -16,7 +16,7 @@ export default function Trustpilot() {
           icon={
             <StarOutlined
               style={{ color: "#00B67A" }}
-              size={24}
+              size={30}
               iconColor={"#00B67A"}
             />
           }

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     minHeight: (props) => (props.heightMin ? props.heightMin : "220px"),
     borderRadius: "10px",
-    marginBottom: "5px",
+    marginBottom: "24px",
     padding: "24px",
     backgroundColor: (props) => (props.bgColor ? props.bgColor : "FFF"),
   },

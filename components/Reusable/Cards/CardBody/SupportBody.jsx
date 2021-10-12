@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Avatar, Button, Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 export default function SupportBody() {
@@ -7,7 +7,7 @@ export default function SupportBody() {
     <>
       <Grid className={classes.cardBody} container xs={12}>
         <Grid className={classes.avatar} item>
-          <avatar
+          <Avatar
             alt="Remy Sharp"
             src="https://mui.com/static/images/avatar/2.jpg"
           />

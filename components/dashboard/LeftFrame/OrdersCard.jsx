@@ -7,7 +7,7 @@ import CardHeader from "../../Reusable/Cards/CardHeader";
 import Spinner from "../../Reusable/Spinner";
 
 export default function OrdersCard({ orders, error }) {
-  const title = "orders";
+  const title = "Orders";
   const periode = "This month";
   const footer = "10 free tips to increase your sales";
   return (

@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "flex-start",
     zIndex: 2,
-    marginBottom: "24px",
     overflow: "hidden auto",
   },
 }));

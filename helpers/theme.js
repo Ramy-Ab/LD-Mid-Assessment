@@ -83,8 +83,8 @@ export const theme = createTheme({
     },
     cardsPeriod: {
       fontFamily: "NotoSansHK",
-      fontWeight: "300",
-      fontSize: "13px",
+      fontWeight: "400",
+      fontSize: "14px",
       lineHeight: "18px",
       color: "#666666",
     },
@@ -106,7 +106,7 @@ export const theme = createTheme({
       color: "#21B8F9",
       fontFamily: "SourceSansPro",
       fontWeight: "400",
-      fontSize: "15px",
+      fontSize: "16px",
       lineHeight: "20px",
     },
     blogTitle: {

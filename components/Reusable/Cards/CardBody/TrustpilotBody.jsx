@@ -8,7 +8,8 @@ export default function TrustpilotBody() {
       <Typography className={classes.textBody}>
         Show us your love by leaving a
         <span style={{ color: "#00C48C" }}> positive </span> review on trust
-        pilot and receive the extension of 50 additional products
+        pilot and receive the extension of{" "}
+        <span style={{ fontWeight: "700" }}> 50 additional products </span>
       </Typography>{" "}
     </>
   );
@@ -17,9 +18,9 @@ export default function TrustpilotBody() {
 const useStyles = makeStyles((theme) => ({
   textBody: {
     color: "#FFFFFF",
-    fontFamily: "NotoSansHK",
-    fontWeight: "400",
-    fontSize: "13px",
+    fontFamily: "NotoSansKR",
+    fontWeight: "100",
+    fontSize: "17px",
     lineHeight: "22px",
   },
 }));

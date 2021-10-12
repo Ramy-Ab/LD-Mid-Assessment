@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "flex-start",
     margin: "1rem",
-    marginTop: "-50px",
+    marginTop: "-70px",
     zIndex: "2",
   },
 }));

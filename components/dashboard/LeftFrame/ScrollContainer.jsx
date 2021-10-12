@@ -27,8 +27,6 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
     alignItems: "flex-start",
     flexDirection: "row",
-    marginBottom: "24px",
-    minHeight: "343px",
     alignContent: "stretch",
   },
 }));

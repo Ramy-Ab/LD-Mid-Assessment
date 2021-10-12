@@ -6,7 +6,7 @@ import CardHeader from "../../Reusable/Cards/CardHeader";
 import Spinner from "../../Reusable/Spinner";
 
 export default function VisitorCard({ visitor, shopInfo, error }) {
-  const title = "visitors";
+  const title = "Visitors";
   const periode = "This month";
   const footer = "Do you want more visits?contact us!";
   return (
@@ -18,7 +18,7 @@ export default function VisitorCard({ visitor, shopInfo, error }) {
           icon={<Eye size={24} />}
         />
         {!visitor && !error && <Spinner />}
-        {visitor && !error && <VisitorBody />}
+        {visitor && !error && <VisitorBody visitor={visitor} />}
         <CardFooter footer={footer} />
       </CardLayout>
     </>

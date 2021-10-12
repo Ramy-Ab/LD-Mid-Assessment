@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "flex-start",
     minHeight: "617px",
     borderRadius: "10px",
-    marginBottom: "24px",
+    margin: "0px 12px",
     padding: "24px",
   },
 }));

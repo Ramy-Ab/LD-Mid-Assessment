@@ -2,9 +2,9 @@ import { Grid, Paper, Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 import { ArrowRight } from "react-feather";
-import mobile from "../../../assets/images/Home.png";
-import appStore from "../../../assets/images/appStore.png";
-import playStore from "../../../assets/images/playStore.png";
+import mobile from "../../../../assets/images/Home.png";
+import appStore from "../../../../assets/images/appStore.png";
+import playStore from "../../../../assets/images/playStore.png";
 export default function MobileApp() {
   const classes = useStyles();
   return (

@@ -1,7 +1,7 @@
-import { Grid, Users } from "react-feather";
-import CardLayout from "../../Reusable/Cards";
-import CardFooter from "../../Reusable/Cards/CardFooter";
-import CardHeader from "../../Reusable/Cards/CardHeader";
+import { Grid } from "react-feather";
+import CardLayout from "../../../../Reusable/Cards";
+import CardFooter from "../../../../Reusable/Cards/CardFooter";
+import CardHeader from "../../../../Reusable/Cards/CardHeader";
 import ScrollerItems from "./ScrollerItems";
 
 export default function Scroller({ extensions }) {

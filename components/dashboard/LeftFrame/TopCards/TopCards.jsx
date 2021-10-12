@@ -2,9 +2,9 @@ import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import useSwr from "swr";
-import { fetcher } from "../../../api/fetcher";
-import { shopInfoUrl } from "../../../utils/constants/apis";
-import CustomizedSnackbars from "../../Reusable/Snackbar";
+import { fetcher } from "../../../../api/fetcher";
+import { shopInfoUrl } from "../../../../utils/constants/apis";
+import CustomizedSnackbars from "../../../Reusable/Snackbar";
 import OrdersCard from "./OrdersCard";
 import VisitorCard from "./VisitorCard";
 

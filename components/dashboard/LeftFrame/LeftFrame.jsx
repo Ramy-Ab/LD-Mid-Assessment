@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Blogs from "./Blogs";
-import ScrollContainer from "./ScrollContainer";
-import TopCards from "./TopCards";
+import Blogs from "./Blogs/Blogs";
+import ScrollContainer from "./MiddleContainer/MiddleContainer";
+import TopCards from "./TopCards/TopCards";
 
 export default function LeftFrame({ blogs, extensions }) {
   const classes = useStyles();

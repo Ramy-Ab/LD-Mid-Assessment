@@ -1,7 +1,7 @@
 import { Grid, Paper } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import MobileApp from "./MobileApp";
-import Scroller from "./Scroller";
+import Scroller from "./Scroller/Scroller";
 
 export default function ScrollContainer({ extensions }) {
   const classes = useStyles();

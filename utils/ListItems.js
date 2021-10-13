@@ -18,6 +18,7 @@ import {
   PersonOutline,
 } from "@mui/icons-material";
 import { routes } from "./constants/routes";
+import { Badge } from "@mui/material";
 
 export const listeItems = [
   {
@@ -37,6 +38,13 @@ export const listeItems = [
     url: routes.orders,
     icon: <FormatListBulleted sx={{ fontSize: 20 }} />,
     text: "Orders",
+    badge: (
+      <Badge
+        badgeContent={4}
+        color="success"
+        style={{ color: "white !important", marginRight: "1rem" }}
+      />
+    ),
   },
   {
     type: "item",

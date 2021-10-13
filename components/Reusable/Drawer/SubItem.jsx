@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/link-passhref */
 import {
+  Badge,
   ListItemButton,
   ListItemIcon,
   ListItemText,
@@ -11,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useDrawer } from "../../../contexts/DrawerContext";
 import Link from "next/link";
 
-export default function SubItem({ icon, text, url }) {
+export default function SubItem({ icon, text, url, badge }) {
   const router = useRouter();
   const [hover, setHover] = useState(false);
   const [myPath, setMyPath] = useState(router.pathname);
@@ -43,7 +44,6 @@ export default function SubItem({ icon, text, url }) {
         onClick={clickHandler}
       >
         <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
-
         <ListItemText
           className={classes.text}
           primary={
@@ -53,6 +53,7 @@ export default function SubItem({ icon, text, url }) {
             </Typography>
           }
         />
+        {open && badge}
       </ListItemButton>
     </Link>
   );

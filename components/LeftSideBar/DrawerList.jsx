@@ -29,6 +29,7 @@ export default function DrawerList() {
               icon={item.icon}
               url={item.url}
               text={item.text}
+              badge={item?.badge}
             />
           )}
           {item.type === "collapse" && (

@@ -8,7 +8,6 @@ export default function ConigureShopBody({ data, error }) {
 
   const color = usePercentage(percentage);
   const classes = useStyles({ color });
-  console.log(color);
   return (
     <>
       {!data && !error && <Spinner />}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import {
   ListItemButton,
   ListItemIcon,
@@ -41,16 +42,14 @@ export default function SubItem({ icon, text, url }) {
         onMouseLeave={mouseOut}
         onClick={clickHandler}
       >
-        <ListItemIcon className={classes.icon} className={classes.icon}>
-          {icon}
-        </ListItemIcon>
+        <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
 
         <ListItemText
           className={classes.text}
           primary={
             <Typography variant="bold1" className={classes.text}>
               {" "}
-              {text}{" "}
+              {open ? text : ""}{" "}
             </Typography>
           }
         />
@@ -70,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: (props) => (props.open ? "0px" : "10px"),
+    margin: (props) => (props.open ? "0px 0px" : "5px 0px"),
     minWidth: "35px",
     color: (props) =>
       props.hover || props.myPath === props.url
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
         : theme.palette.blackTeinte.main,
   },
   text: {
-    display: (props) => (props.open ? "" : "none"),
+    // display: (props) => (props.open ? "" : "none"),
     color: (props) =>
       props.hover || props.myPath === props.url
         ? theme.palette.primary.main

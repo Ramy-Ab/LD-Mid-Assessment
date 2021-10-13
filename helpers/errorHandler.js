@@ -5,11 +5,20 @@ export function errorEvent(error) {
       case 401:
         event = "unauthorized";
         break;
-      case 400:
+      case 400 || 403:
         event = error.response.data;
+        break;
+      case 404:
+        event = "Not Found";
         break;
       case 409:
         event = "object_already_exists";
+        break;
+      case 204:
+        event = "No Content provided ";
+        break;
+      case 304:
+        event = "Content Not Modified";
         break;
       case 500:
         event = "internal_server_error";

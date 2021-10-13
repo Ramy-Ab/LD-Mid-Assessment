@@ -7,17 +7,19 @@ export default function ConigureShopBody({ data, error }) {
   const percentage = data?.shops[0].products_allowed;
 
   const color = usePercentage(percentage);
-  console.log("color : ", color);
   const classes = useStyles({ color });
+  console.log(color);
   return (
     <>
       {!data && !error && <Spinner />}
       {data && !error && (
         <Stack>
-          <Typography className={classes.configPercentage}>
+          <Typography className={classes.configPercentage} color={color}>
             {percentage}%
           </Typography>
-          <Typography className={classes.completed}>Completed</Typography>
+          <Typography className={classes.completed} color={color}>
+            Completed
+          </Typography>
         </Stack>
       )}
       <Typography className={classes.configText}>
@@ -30,14 +32,12 @@ export default function ConigureShopBody({ data, error }) {
 
 const useStyles = makeStyles((theme) => ({
   configPercentage: {
-    color: (props) => (props.color ? props.color : "000000"),
     fontFamily: "SourceSansPro",
     fontWeight: "600",
     fontSize: "34px",
     lineHeight: "39px",
   },
   completed: {
-    color: (props) => (props.color ? props.color : "000000"),
     fontFamily: "NotoSansHK",
     fontWeight: "500",
     fontSize: "15px",

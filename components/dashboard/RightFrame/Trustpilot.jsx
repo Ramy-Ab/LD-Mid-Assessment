@@ -21,6 +21,7 @@ export default function Trustpilot() {
             />
           }
         />
+
         <TrustpilotBody />
         <CardFooter footer={footer} color={"#00C48C"} />
       </CardLayout>

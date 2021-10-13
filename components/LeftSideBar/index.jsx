@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     borderRight: "1px solid rgba(0, 0, 0, 0.12)",
     overflow: "hidden auto",
     padding: "15px",
+    transition: "all 1000ms",
   },
   drawerHeader: {
     display: "flex",

@@ -11,20 +11,16 @@ export const usePercentage = (percentage) => {
   const getColor = (percentage) => {
     switch (true) {
       case percentage < 30:
-        setColor("#F33451");
-        console.log("object");
+        setColor("error");
         break;
       case percentage > 30 && percentage < 60:
-        setColor("#F33451");
-        break;
-      case percentage < 30:
-        setColor("#FFA26B");
+        setColor("warning");
         break;
       case percentage > 60:
-        setColor("#00C48C");
+        setColor("success");
         break;
       default:
-        setColor("#000000");
+        setColor("error");
         break;
     }
   };

@@ -37,6 +37,7 @@ export default function DrawerList() {
               icon={item.icon}
               url={item.url}
               text={item.text}
+              // eslint-disable-next-line react/no-children-prop
               children={item.children}
             />
           )}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ExternalLink } from "react-feather";

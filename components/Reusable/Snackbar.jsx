@@ -21,7 +21,7 @@ export default function CustomizedSnackbars({
         onClose={handleClose}
       >
         <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
-          Error : "{error}" Reload page !
+          {`Error : ${error} Reload page !`}
         </Alert>
       </Snackbar>
     </>

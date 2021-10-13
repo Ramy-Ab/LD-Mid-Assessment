@@ -10,9 +10,14 @@ import useSwr from "swr";
 import { useDrawer } from "../../contexts/DrawerContext";
 import { fetcher } from "../../api/fetcher";
 import { personelInfoUrl } from "../../utils/constants/apis";
+import React from "react";
+import RightDrawer from "./RightDrawer/RightDrawer";
 
 export default function NavBar() {
   const open = useDrawer();
+  const [state, setState] = React.useState({
+    right: false,
+  });
 
   const { data } = useSwr(personelInfoUrl, fetcher);
   const personelleInfo = data?.data;
@@ -38,6 +43,7 @@ export default function NavBar() {
                 Dashboard
               </Typography>
             </Grid>
+
             <Grid item className={classes.item} xs={2}>
               <Button color="inherit">
                 {" "}
@@ -47,9 +53,18 @@ export default function NavBar() {
                     badgeContent={personelleInfo.unseen_news + 1}
                     color="error"
                   >
-                    <Typography variant="bold2" component="div">
-                      What's new
+                    <Typography
+                      variant="bold2"
+                      component="div"
+                      onClick={() =>
+                        setState({
+                          right: true,
+                        })
+                      }
+                    >
+                      What&apos;s new
                     </Typography>
+                    <RightDrawer state={state} setState={setState} />
                   </Badge>
                 )}
               </Button>

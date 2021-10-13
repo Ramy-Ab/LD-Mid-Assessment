@@ -1,6 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { ExternalLink, FileText } from "react-feather";
+import Link from "next/link";
 
 export default function BlogHeader() {
   const classes = useStyles();
@@ -12,9 +13,16 @@ export default function BlogHeader() {
           <Typography variant="cardsTitle">Latest news</Typography>
         </Grid>
         <Grid className={classes.flexCenter} item xs={3}>
-          <Typography variant="bluetext1" sx={{ textDecoration: "underline" }}>
-            Visit our blog{" "}
-          </Typography>
+          <Link href="https://vetrinalive.it/blog" passHref>
+            <a className={classes.redirect}>
+              <Typography
+                variant="bluetext1"
+                sx={{ textDecoration: "underline" }}
+              >
+                Visit our blog{" "}
+              </Typography>
+            </a>
+          </Link>
           <ExternalLink className={classes.blueIcon} />
         </Grid>
       </Grid>
@@ -42,5 +50,8 @@ const useStyles = makeStyles((theme) => ({
   },
   usersIcon: {
     marginRight: "1rem",
+  },
+  redirect: {
+    textDecoration: "none",
   },
 }));

@@ -1,18 +1,24 @@
 import { Stack, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { usePercentage } from "../../../../hooks/usePercentage";
 import Spinner from "../../Spinner";
 
 export default function ConigureShopBody({ data, error }) {
-  const classes = useStyles();
+  const percentage = data?.shops[0].products_allowed;
+
+  const color = usePercentage(percentage);
+  const classes = useStyles({ color });
   return (
     <>
       {!data && !error && <Spinner />}
       {data && !error && (
         <Stack>
-          <Typography className={classes.configPercentage}>
-            {data?.shops[0].products_allowed}%
+          <Typography className={classes.configPercentage} color={color}>
+            {percentage}%
           </Typography>
-          <Typography className={classes.completed}>Completed</Typography>
+          <Typography className={classes.completed} color={color}>
+            Completed
+          </Typography>
         </Stack>
       )}
       <Typography className={classes.configText}>
@@ -25,14 +31,12 @@ export default function ConigureShopBody({ data, error }) {
 
 const useStyles = makeStyles((theme) => ({
   configPercentage: {
-    color: "#FFA26B",
     fontFamily: "SourceSansPro",
     fontWeight: "600",
     fontSize: "34px",
     lineHeight: "39px",
   },
   completed: {
-    color: "#FFA26B",
     fontFamily: "NotoSansHK",
     fontWeight: "500",
     fontSize: "15px",

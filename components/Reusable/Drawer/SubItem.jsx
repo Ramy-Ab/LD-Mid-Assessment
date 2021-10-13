@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/link-passhref */
 import {
+  Badge,
   ListItemButton,
   ListItemIcon,
   ListItemText,
@@ -10,7 +12,7 @@ import { useEffect, useState } from "react";
 import { useDrawer } from "../../../contexts/DrawerContext";
 import Link from "next/link";
 
-export default function SubItem({ icon, text, url }) {
+export default function SubItem({ icon, text, url, badge }) {
   const router = useRouter();
   const [hover, setHover] = useState(false);
   const [myPath, setMyPath] = useState(router.pathname);
@@ -41,19 +43,17 @@ export default function SubItem({ icon, text, url }) {
         onMouseLeave={mouseOut}
         onClick={clickHandler}
       >
-        <ListItemIcon className={classes.icon} className={classes.icon}>
-          {icon}
-        </ListItemIcon>
-
+        <ListItemIcon className={classes.icon}>{icon}</ListItemIcon>
         <ListItemText
           className={classes.text}
           primary={
             <Typography variant="bold1" className={classes.text}>
               {" "}
-              {text}{" "}
+              {open ? text : ""}{" "}
             </Typography>
           }
         />
+        {open && badge}
       </ListItemButton>
     </Link>
   );
@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: (props) => (props.open ? "0px" : "10px"),
+    margin: (props) => (props.open ? "0px 0px" : "5px 0px"),
     minWidth: "35px",
     color: (props) =>
       props.hover || props.myPath === props.url
@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
         : theme.palette.blackTeinte.main,
   },
   text: {
-    display: (props) => (props.open ? "" : "none"),
+    // display: (props) => (props.open ? "" : "none"),
     color: (props) =>
       props.hover || props.myPath === props.url
         ? theme.palette.primary.main

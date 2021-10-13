@@ -7,6 +7,18 @@ export const theme = createTheme({
     primary: {
       main: "#21B8F9",
     },
+    secondary: {
+      main: "#19857b",
+    },
+    error: {
+      main: "#F33451",
+    },
+    warning: {
+      main: "#FFA26B",
+    },
+    success: {
+      main: "#00C48C",
+    },
     orange: {
       main: "#FFA26B",
     },
@@ -24,12 +36,6 @@ export const theme = createTheme({
     },
     blackTeinte: {
       main: "#103B66",
-    },
-    secondary: {
-      main: "#19857b",
-    },
-    error: {
-      main: red.A400,
     },
   },
   typography: {
@@ -65,6 +71,13 @@ export const theme = createTheme({
       fontWeight: "500",
       fontSize: "17px",
       lineHeight: "22px",
+      color: "#FFFFFF",
+    },
+    chip: {
+      fontFamily: "NotoSansHK",
+      fontWeight: "300",
+      fontSize: "12px",
+      lineHeight: "14px",
       color: "#FFFFFF",
     },
     cardsTitle: {
@@ -125,9 +138,9 @@ export const theme = createTheme({
     },
     blogFooter: {
       fontFamily: "NotoSansHK",
-      fontWeight: "300",
-      fontSize: "12px",
-      lineHeight: "12px",
+      fontWeight: "400",
+      fontSize: "0.875rem",
+      lineHeight: "1.43",
       color: "#103B66",
     },
   },
